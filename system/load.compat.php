@@ -48,7 +48,7 @@ $title = ucwords($subtopic) . ' - ' . Website::getServerConfig()->getValue('serv
 
 $topic = $subtopic;
 
-$passwordency = Website::getServerConfig()->getValue('passwordType');
+$passwordency = Website::getServerConfig()->getValue('encryptionType');
 if (empty($passwordency)) {
 	$passwordency = 'sha1';
 } else if ($passwordency == 'plain') {

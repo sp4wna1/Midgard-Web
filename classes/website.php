@@ -120,7 +120,7 @@ class Website extends WebsiteErrors
 
 	public static function updatePasswordEncryption()
 	{
-		$encryptionTypeLowerd = strtolower(self::getServerConfig()->getValue('passwordType'));
+		$encryptionTypeLowerd = strtolower(self::getServerConfig()->getValue('encryptionType'));
 		if (empty($encryptionTypeLowerd)) { // TFS 1.1+
 			$encryptionTypeLowerd = $config['site']['encryptionType'];
 			if (empty($encryptionTypeLowerd)) {
