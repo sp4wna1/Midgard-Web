@@ -412,7 +412,6 @@ echo "</div>";
 $time_end = microtime_float();
 $time = $time_end - $time_start;
 ?>
-            Account Maker made by Gesior. Layout by CipSoft GmbH.<br/>Page has been viewed <?PHP echo $page_views; ?> times. Load time: <?PHP echo round($time, 4); ?> seconds, queries: <?PHP echo $SQL->queriesCount; ?>
           </div>
         </div>
         <div id="ThemeboxesColumn">
