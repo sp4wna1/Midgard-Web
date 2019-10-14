@@ -10,9 +10,6 @@ define('INITIALIZED', true);
 // if not defined before, set 'false' to load all normal
 if(!defined('ONLY_PAGE'))
 	define('ONLY_PAGE', false);
-	
-// check if site is disabled/requires installation
-include_once('./system/load.loadCheck.php');
 
 // fix user data, load config, enable class auto loader
 include_once('./system/load.init.php');
