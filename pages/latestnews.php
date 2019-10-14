@@ -22,6 +22,8 @@ $main_content .= '</tr></table>';
 
 
 
+$main_content .= '<h3>No news. Go forum and make new thread on board News.</h3>';
+
 function replaceSmile($text, $smile)
 {
     $smileys = array(';D' => 1, ':D' => 1, ':cool:' => 2, ';cool;' => 2, ':ekk:' => 3, ';ekk;' => 3, ';o' => 4, ';O' => 4, ':o' => 4, ':O' => 4, ':(' => 5, ';(' => 5, ':mad:' => 6, ';mad;' => 6, ';rolleyes;' => 7, ':rolleyes:' => 7, ':)' => 8, ';d' => 9, ':d' => 9, ';)' => 10);
@@ -94,7 +96,7 @@ function showPost($topic, $text, $smile)
     $post .= replaceAll($text, $smile);
     return $post;
 }
-
+/*
     $last_tickers = $SQL->query('SELECT ' . $SQL->tableName('players') . '.' . $SQL->fieldName('name') . ', ' . $SQL->tableName('forum') . '.' . $SQL->fieldName('post_text') . ', ' . $SQL->tableName('forum') . '.' . $SQL->fieldName('post_topic') . ', ' . $SQL->tableName('forum') . '.' . $SQL->fieldName('post_smile') . ', ' . $SQL->tableName('forum') . '.' . $SQL->fieldName('id') . ', ' . $SQL->tableName('forum') . '.' . $SQL->fieldName('replies') . ', ' . $SQL->tableName('forum') . '.' . $SQL->fieldName('post_date') . ' FROM ' . $SQL->tableName('players') . ', ' . $SQL->tableName('forum') . ' WHERE ' . $SQL->tableName('players') . '.' . $SQL->fieldName('id') . ' = ' . $SQL->tableName('forum') . '.' . $SQL->fieldName('author_guid') . ' AND ' . $SQL->tableName('forum') . '.' . $SQL->fieldName('section') . ' = 1 AND ' . $SQL->tableName('forum') . '.' . $SQL->fieldName('first_post') . ' = ' . $SQL->tableName('forum') . '.' . $SQL->fieldName('id') . ' AND ' . $SQL->tableName('forum') . '.' . $SQL->fieldName('post_topic') . '=\'News Ticker\'' . ' ORDER BY ' . $SQL->tableName('forum') . '.' . $SQL->fieldName('last_post') . ' DESC LIMIT 5')->fetchAll();
     if(isset($last_tickers[0]))
     {
@@ -179,3 +181,5 @@ function showPost($topic, $text, $smile)
     }
     else
         $main_content .= '<h3>No news. Go forum and make new thread on board News.</h3>';
+
+*/
