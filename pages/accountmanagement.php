@@ -38,12 +38,7 @@ else
 			else
 				$account_registred = '<b><font color="green">Yes</font></b>';
 		$account_created = $account_logged->getCreateDate();
-		$account_email = $account_logged->getEMail();
-		$account_email_new_time = $account_logged->getCustomField("email_new_time");
-		if($account_email_new_time > 1)
-			$account_email_new = $account_logged->getCustomField("email_new");
-		$account_rlname = $account_logged->getRLName();
-		$account_location = $account_logged->getLocation();
+		$account_email = $account_logged->getEmail();
 		if($account_logged->isBanned())
 			if($account_logged->getBanTime() > 0)
 				$welcome_msg = '<font color="red">Your account is banished until '.date("j F Y, G:i:s", $account_logged->getBanTime()).'!</font>';
@@ -160,11 +155,11 @@ else
 						$mail->IsMail();
 					$mail->IsHTML(true);
 					$mail->From = $config['site']['mail_address'];
-					$mail->AddAddress($account_logged->getEMail());
+					$mail->AddAddress($account_logged->getEmail());
 					$mail->Subject = $config['server']['serverName']." - Changed password";
 					$mail->Body = $mailBody;
 					if($mail->Send())
-						$main_content .= '<br /><small>Your new password were send on email address <b>'.htmlspecialchars($account_logged->getEMail()).'</b>.</small>';
+						$main_content .= '<br /><small>Your new password were send on email address <b>'.htmlspecialchars($account_logged->getEmail()).'</b>.</small>';
 					else
 						$main_content .= '<br /><small>An error occorred while sending email with password!</small>';
 				}
@@ -330,11 +325,11 @@ else
 							$mail->IsMail();
 						$mail->IsHTML(true);
 						$mail->From = $config['site']['mail_address'];
-						$mail->AddAddress($account_logged->getEMail());
+						$mail->AddAddress($account_logged->getEmail());
 						$mail->Subject = $config['server']['serverName']." - recovery key";
 						$mail->Body = $mailBody;
 						if($mail->Send())
-							$main_content .= '<br /><small>Your recovery key were send on email address <b>'.htmlspecialchars($account_logged->getEMail()).'</b>.</small>';
+							$main_content .= '<br /><small>Your recovery key were send on email address <b>'.htmlspecialchars($account_logged->getEmail()).'</b>.</small>';
 						else
 							$main_content .= '<br /><small>An error occorred while sending email with recovery key! You will not receive e-mail with this key.</small>';
 					}
@@ -408,7 +403,7 @@ else
 									$mail->IsMail();
 								$mail->IsHTML(true);
 								$mail->From = $config['site']['mail_address'];
-								$mail->AddAddress($account_logged->getEMail());
+								$mail->AddAddress($account_logged->getEmail());
 								$mail->Subject = $config['server']['serverName']." - new recovery key";
 								$mail->Body = $mailBody;
 								if($mail->Send())
@@ -416,10 +411,10 @@ else
 									$account_logged->set("key", $new_rec_key);
 									$account_logged->set("premium_points", $account_logged->get("premium_points")-$config['site']['generate_new_reckey_price']);
 									$account_logged->save();
-									$main_content .= '<br />Your recovery key were send on email address <b>'.htmlspecialchars($account_logged->getEMail()).'</b> for '.$config['site']['generate_new_reckey_price'].' premium points.';
+									$main_content .= '<br />Your recovery key were send on email address <b>'.htmlspecialchars($account_logged->getEmail()).'</b> for '.$config['site']['generate_new_reckey_price'].' premium points.';
 								}
 								else
-									$main_content .= '<br />An error occorred while sending email ( <b>'.htmlspecialchars($account_logged->getEMail()).'</b> ) with recovery key! Recovery key not changed. Try again.';
+									$main_content .= '<br />An error occorred while sending email ( <b>'.htmlspecialchars($account_logged->getEmail()).'</b> ) with recovery key! Recovery key not changed. Try again.';
 							$main_content .= '</ul>          </table>        </div>  </table></div></td></tr><br/><center><table border="0" cellspacing="0" cellpadding="0" ><form action="?subtopic=accountmanagement" method="post" ><tr><td style="border:0px;" ><div class="BigButton" style="background-image:url('.$layout_name.'/images/buttons/sbutton.gif)" ><div onMouseOver="MouseOverBigButton(this);" onMouseOut="MouseOutBigButton(this);" ><div class="BigButtonOver" style="background-image:url('.$layout_name.'/images/buttons/sbutton_over.gif);" ></div><input class="ButtonText" type="image" name="Back" alt="Back" src="'.$layout_name.'/images/buttons/_sbutton_back.gif" ></div></div></td></tr></form></table></center>';
 					}
 					else

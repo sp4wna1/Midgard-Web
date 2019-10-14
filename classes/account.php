@@ -274,7 +274,7 @@ class Account extends ObjectData
     /*
      * for compability with old scripts
     */
-    public function getEMail()
+    public function getEmail()
     {
         return $this->getMail();
     }

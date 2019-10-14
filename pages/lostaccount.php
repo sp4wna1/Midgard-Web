@@ -1,7 +1,4 @@
 <?php
-if(!defined('INITIALIZED'))
-	exit;
-
 if($config['site']['send_emails'])
 {
 	if($action == '')
@@ -92,7 +89,7 @@ if($config['site']['send_emails'])
 			{
 				if($account->getCustomField('next_email') < time())
 				{
-					if($account->getEMail() == $email)
+					if($account->getEmail() == $email)
 					{
 						$acceptedChars = '123456789zxcvbnmasdfghjklqwertyuiop';
 						$newcode = NULL;

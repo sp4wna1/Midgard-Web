@@ -234,9 +234,6 @@ elseif($page == 'step')
 		echo 'Installer try to add new tables and columns to database.<br>';
 		$columns = array();
 		//$columns[] = array('table', 'name_of_column', 'type', 'length', 'default');
-		$columns[] = array('accounts', 'key', 'VARCHAR', '20', '0');
-		$columns[] = array('accounts', 'email_new', 'VARCHAR', '255', '');
-		$columns[] = array('accounts', 'email_new_time', 'INT', '11', '0');
 		$columns[] = array('accounts', 'rlname', 'VARCHAR', '255', '');
 		$columns[] = array('accounts', 'location', 'VARCHAR', '255', '');
 		$columns[] = array('accounts', 'page_access', 'INT', '11', '0');
