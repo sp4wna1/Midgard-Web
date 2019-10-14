@@ -245,7 +245,7 @@ if($action == "saveaccount")
 	//check e-mail
 	if(empty($reg_number))
 		$reg_form_errors[] = "Please enter account number.";
-	elseif(!check_account_name($reg_number))
+	elseif(!check_account_number($reg_number))
 		$reg_form_errors[] = "Invalid account number format. Use only numbers 0-9.";
 	if(empty($reg_email))
 		$reg_form_errors[] = "Please enter your email address.";

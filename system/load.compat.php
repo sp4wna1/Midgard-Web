@@ -88,15 +88,15 @@ function check_name($name)
     return true;
 }
 
-function check_account_name($name)
+function check_account_number($number)
 {
-    $name = (string)$name;
-    $temp = strspn("$name", "QWERTYUIOPASDFGHJKLZXCVBNM0123456789");
-    if ($temp != strlen($name))
+    $number = (int)$number;
+    $temp = strspn("$number", "0123456789");
+    if ($temp != strlen($number))
         return false;
-    if (strlen($name) < 1)
+    if ($number < 9999)
         return false;
-    if (strlen($name) > 32)
+    if ($number >= 99999999999)
         return false;
 
     return true;
