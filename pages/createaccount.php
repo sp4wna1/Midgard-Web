@@ -299,34 +299,38 @@ if($action == "saveaccount")
 			$reg_form_errors[] = 'Account with this name already exist.';
 	}
 	// ----------creates account-------------(save in database)
-	if(empty($reg_form_errors))
-	{
-		//create object 'account' and generate new acc. number
-		if($config['site']['create_account_verify_mail'])
-		{
-			$reg_password = '';
-			for ($i = 1; $i <= 6; $i++)
-				$reg_password .= mt_rand(0,9);
-		}
-		$reg_account = new Account();
-		// saves account information in database
-		$reg_account->setID($reg_number);
-		$reg_account->setPassword($reg_password);
-		$reg_account->setEMail($reg_email);
-		$reg_account->setCreateDate(time());
-		$reg_account->setCreateIP(Visitor::getIP());
-		if ($config['site']['select_flag']) {
-			$reg_account->setFlag($reg_country);
-		} else {
-			$reg_account->setFlag(Website::getCountryCode(long2ip(Visitor::getIP())));
-		}
-		if(isset($config['site']['newaccount_premdays']) && $config['site']['newaccount_premdays'] > 0)
-		{
-			$reg_account->set("premdays", $config['site']['newaccount_premdays']);
-			$reg_account->set("lastday", time());
-		}
-		$reg_account->saveAccount();
-		//show information about registration
+    if(empty($reg_form_errors))
+    {
+        //create object 'account' and generate new acc. number
+        if($config['site']['create_account_verify_mail'])
+        {
+            $reg_password = '';
+            for ($i = 1; $i <= 6; $i++)
+                $reg_password .= mt_rand(0,9);
+        }
+        $reg_account = new Account();
+
+        // saves account information in database
+        $reg_account->setID($reg_number);
+        $reg_account->setPassword($reg_password);
+        $reg_account->setEmail($reg_email);
+        $reg_account->setType(1);
+        $reg_account->setPremDays(0);
+        $reg_account->setLastDay(time());
+        $reg_account->setCreateDate(time());
+        $reg_account->setLastPost(time());
+        if ($config['site']['select_flag']) {
+            $reg_account->setFlag($reg_country);
+        } else {
+            $reg_account->setFlag(Website::getCountryCode(long2ip(Visitor::getIP())));
+        }
+        if(isset($config['site']['newaccount_premdays']) && $config['site']['newaccount_premdays'] > 0)
+        {
+            $reg_account->set("premdays", $config['site']['newaccount_premdays']);
+            $reg_account->set("lastday", time());
+        }
+        $reg_account->saveAccount();
+        //show information about registration
 		if($config['site']['send_emails'] && $config['site']['create_account_verify_mail'])
 		{
 			$mailBody = '<html>
