@@ -15,9 +15,9 @@ $config['site']['encryptionType'] = 'sha1';
 # Create Account Options
 $config['site']['one_email'] = false;
 $config['site']['create_account_verify_mail'] = false;
-$config['site']['verify_code'] = true;
+$config['site']['verify_code'] = false;
 $config['site']['email_days_to_change'] = 3;
-$config['site']['newaccount_premdays'] = 999;
+$config['site']['newaccount_premdays'] = 0;
 $config['site']['send_register_email'] = false;
 $config['site']['select_flag'] = true;
 
