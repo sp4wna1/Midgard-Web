@@ -28,9 +28,6 @@ if (!ONLY_PAGE) {
     $logged = Visitor::isLogged();
     // Account object with account of logged player or empty Account
     $account_logged = Visitor::getAccount();
-    // group of acc. logged
-    if (Visitor::isLogged())
-        $group_id_of_acc_logged = Visitor::getAccount()->getPageAccess();
 }
 $layout_name = './layouts/' . Website::getWebsiteConfig()->getValue('layout');
 
