@@ -3,7 +3,7 @@
 $config['site']['serverPath'] = "C:/otsy/tfs100/";
 $config['site']['useServerConfigCache'] = false;
 $config['site']['server_name'] = 'Forgotten';
-$towns_list = array(2 => 'Thais', 1 => 'Venore', 4 => 'Carlin');
+$towns_list = array(2 => 'Thais', 1 => 'Venore', 4 => 'Carlin', 11 => 'Rookgard');
 
 $config['site']['outfit_images_url'] = 'http://outfit-images.ots.me/outfit.php';
 $config['site']['item_images_url'] = 'http://item-images.ots.me/960/';
@@ -22,8 +22,8 @@ $config['site']['send_register_email'] = false;
 $config['site']['select_flag'] = true;
 
 # Create Character Options
-$config['site']['newchar_vocations'] = array(1 => 'Sorcerer Sample', 2 => 'Druid Sample', 3 => 'Paladin Sample', 4 => 'Knight Sample');
-$config['site']['newchar_towns'] = array(2);
+$config['site']['newchar_vocations'] = array(0 => 'Rook Sample');
+$config['site']['newchar_towns'] = array(11);
 $config['site']['max_players_per_account'] = 7;
 
 # Emails Config
