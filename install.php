@@ -302,7 +302,7 @@ elseif($page == 'step')
 							  `trans_real` int(11) NOT NULL default '0',
 							  PRIMARY KEY  (`id`)
 							) ENGINE=InnoDB DEFAULT CHARSET=latin1;";
-		$tables[Database::DB_MYSQL]['z_forum'] = "CREATE TABLE `z_forum` (
+		$tables[Database::DB_MYSQL]['forum'] = "CREATE TABLE `forum` (
 							  `id` int(11) NOT NULL auto_increment,
 							  `first_post` int(11) NOT NULL default '0',
 							  `last_post` int(11) NOT NULL default '0',
