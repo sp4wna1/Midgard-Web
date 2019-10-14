@@ -6,14 +6,24 @@ class Account extends ObjectData
 {
 	const LOADTYPE_ID = 'id';
 	const LOADTYPE_NAME = 'name';
-	const LOADTYPE_MAIL = 'email';
 	public static $table = 'accounts';
-	public $data = array('name' => null, 'password' => null, 'premdays' => null, 'lastday' => null, 'email' => null, 'key' => null, 'create_ip' => null, 'creation' => null, 'premium_points' => null, 'page_access' => null, 'location' => null, 'rlname' => null, 'email_new' => null, 'email_new_time' => null, 'email_code' => null, 'next_email' => null, 'last_post' => null, 'flag' => null);
-	public static $fields = array('id', 'name', 'password', 'premdays', 'lastday', 'email', 'key', 'create_ip', 'creation', 'premium_points', 'page_access', 'location', 'rlname', 'email_new', 'email_new_time', 'email_code', 'next_email', 'last_post', 'flag');
+	public $data = array('id' => null, 'password' => null, 'premdays' => null, 'lastday' => null, 'email' => null, 'key' => null, 'create_ip' => null, 'creation' => null, 'premium_points' => null, 'page_access' => null, 'location' => null, 'rlname' => null, 'email_new' => null, 'email_new_time' => null, 'email_code' => null, 'next_email' => null, 'last_post' => null, 'flag' => null);
+	public static $fields = array('id', 'password', 'premdays', 'lastday', 'email', 'key', 'create_ip', 'creation', 'premium_points', 'page_access', 'location', 'rlname', 'email_new', 'email_new_time', 'email_code', 'next_email', 'last_post', 'flag');
 	public $players;
 	public $playerRanks;
 	public $guildAccess;
 	public $bans;
+
+    public function saveAccount()
+    {
+        $keys = array();
+        $values = array();
+        foreach (self::$fields as $key) {
+            $keys[] = $this->getDatabaseHandler()->fieldName($key);
+            $values[] = $this->getDatabaseHandler()->quote($this->data[$key]);
+        }
+        $this->getDatabaseHandler()->query('INSERT INTO ' . $this->getDatabaseHandler()->tableName('accounts') . ' (' . implode(', ', $keys) . ') VALUES (' . implode(', ', $values) . ')');
+    }
 
     public function __construct($search_text = null, $search_by = self::LOADTYPE_ID)
     {
@@ -47,6 +57,7 @@ class Account extends ObjectData
 	{
 		$this->load($mail, 'email');
 	}
+
 
 	public function save($forceInsert = false)
 	{
@@ -178,8 +189,6 @@ class Account extends ObjectData
 
 	public function setID($value){$this->data['id'] = $value;}
 	public function getID(){return $this->data['id'];}
-	public function setName($value){$this->data['name'] = $value;}
-	public function getName(){return $this->data['name'];}
 	public function setPassword($value)
 	{
 		$this->data['password'] = Website::encryptPassword($value, $this);
@@ -209,7 +218,7 @@ class Account extends ObjectData
 	public function getPremiumPoints(){return $this->data['premium_points'];}
 	public function setPageAccess($value){$this->data['page_access'] = $value;}
 	public function getPageAccess(){return $this->data['page_access'];}
-	
+
 	public function setLocation($value){$this->data['location'] = $value;}
 	public function getLocation(){return $this->data['location'];}
 	public function setRLName($value){$this->data['rlname'] = $value;}
@@ -229,7 +238,7 @@ class Account extends ObjectData
 		return ($this->data['password'] == Website::encryptPassword($password, $this));
 	}
 
-	public function find($name){$this->loadByName($name);}
+    public function find($id){$this->loadById($id);}
 	public function findByEmail($email){$this->loadByEmail($email);}
 	public function isPremium(){return ($this->getPremDays() > 0);}
 	public function getLastLogin(){return $this->getLastDay();}

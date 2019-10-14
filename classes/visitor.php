@@ -1,7 +1,4 @@
 <?php
-if(!defined('INITIALIZED'))
-	exit;
-
 class Visitor
 {
 	const LOGINSTATE_NOT_TRIED = 1;
@@ -36,7 +33,7 @@ class Visitor
 		self::$account = new Account();
 		if(!empty(self::$loginAccount))
 		{
-			self::$account->loadByName(self::$loginAccount);
+            self::$account->loadById(self::$loginAccount);
 			if(self::$account->isLoaded())
 				if(self::$account->isValidPassword(self::$loginPassword))
 					self::$loginState = self::LOGINSTATE_LOGGED;
