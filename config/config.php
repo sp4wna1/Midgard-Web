@@ -2,7 +2,7 @@
 # Account Maker Config
 $config['site']['serverPath'] = "C:/otsy/tfs100/";
 $config['site']['useServerConfigCache'] = false;
-$config['site']['server_name'] = 'Forgotten';
+$config['site']['server_name'] = 'Midgard';
 $towns_list = array(11 => 'Rookgard');
 
 $config['site']['outfit_images_url'] = 'http://outfit-images.ots.me/outfit.php';
