@@ -36,7 +36,7 @@ if(!defined('INITIALIZED'))
 </head>
 <body onBeforeUnLoad="SaveMenu();" onUnload="SaveMenu();">
  <a name="top"></a>
-  <div id="ArtworkHelper" style="background-image:url(<?PHP echo $layout_name; ?>/images/header/background-artwork.jpg);" >
+  <div id="ArtworkHelper" style="background-image:url(<?PHP echo $layout_name; ?>/images/background.jpg);" >
     <div style="width:1200px" id="Bodycontainer">
       <div id="ContentRow">
         <div id="MenuColumn">
