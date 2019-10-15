@@ -71,35 +71,6 @@ if(!empty($name))
 		}
 		$main_content .= '</TABLE>';
 
-		$main_content .= '<table width=100%><tr>';
-		$itemsList = $player->getItems();
-		$main_content .= '<td align=center><table with=100% style="border: solid 1px #888888;" CELLSPACING="1"><TR>';		
-		$list = array('2','1','3','6','4','5','9','7','10','8');
-		foreach ($list as $number_of_items_showed => $slot)
-		{
-			if($slot == '8') // add Soul before show 'feet'
-			{
-				$main_content .= '<td style="background-color: '.$config['site']['darkborder'].'; text-align: center;">Soul:<br/>'. $player->getSoul() .'</td>';
-			}
-			if($itemsList->getSlot($slot) === false) // item does not exist in database
-			{
-				$main_content .= '<TD style="background-color: '.$config['site']['darkborder'].';"><img src="' . $config['site']['item_images_url'] . $slot . $config['site']['item_images_extension'] . '" width="45"/></TD>';
-			}
-			else
-			{
-				$main_content .= '<TD style="background-color: '.$config['site']['darkborder'].';"><img src="' . $config['site']['item_images_url'] . $itemsList->getSlot($slot)->getID() . $config['site']['item_images_extension'] . '" width="45"/></TD>';
-			}
-			if($number_of_items_showed % 3 == 2)
-			{
-				$main_content .= '</tr><tr>';
-			}
-			if($slot == '8') // add Capacity after show 'feet'
-			{
-				$main_content .= '<td style="background-color: '.$config['site']['darkborder'].'; text-align: center;">Cap:<br/>'. $player->getCap() .'</td>';
-			}
-		}
-		$main_content .= '</tr></TABLE></td>';
-
 		$hpPercent = max(0, min(100, $player->getHealth() / max(1, $player->getHealthMax()) * 100));
 		$manaPercent = max(0, min(100, $player->getMana() / max(1, $player->getManaMax()) * 100));
 		$main_content .= '<td align=center ><table width=100%><tr><td align=center><table CELLSPACING="1" CELLPADDING="4" width="100%"><tr><td BGCOLOR="'.$config['site']['lightborder'].'" align="left" width="20%"><b>Player Health:</b></td>
