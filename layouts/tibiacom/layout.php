@@ -307,7 +307,6 @@ echo "<a href='?subtopic=serverinfo'>
     <div class='RightChain' style='background-image:url(<?PHP echo $layout_name; ?>/images/general/chain.gif);'></div>
   </div>
 </a>
-</div>
     <?PHP
     if($config['site']['download_page'])
         echo "<a href='?subtopic=download'>
@@ -319,6 +318,7 @@ echo "<a href='?subtopic=serverinfo'>
     </div>
     </a>";
     ?>
+</div>
     <!-- End Submenu -->
 </div>
 
