@@ -25,7 +25,7 @@ $config['site']['flag_images_extension'] = '.png';
 $config['site']['encryptionType'] = 'sha1';
 
 # Create Account Options
-$config['site']['one_email'] = false;
+$config['site']['one_email'] = true;
 $config['site']['create_account_verify_mail'] = false;
 $config['site']['verify_code'] = false;
 $config['site']['email_days_to_change'] = 3;
