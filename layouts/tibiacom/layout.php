@@ -409,12 +409,11 @@ echo "</div>";
   </div>
            </div>
           </div>
-          <div id="Footer">
-<?PHP
-$time_end = microtime_float();
-$time = $time_end - $time_start;
-?>
-          </div>
+
+            <div id="Footer">
+              Layout by CipSoft GmbH.
+            </div>
+
         </div>
         <div id="ThemeboxesColumn">
           <div id="RightArtwork">
