@@ -68,7 +68,7 @@ if(!empty($name))
 			$main_content .= '<tr bgcolor="' . $bgcolor . '"><td>Comment:</td><td>' . $comment . '</td></tr>';
 		}
 
-        //Heath Bar
+        //region Heath Bar
         $hpPercent = max(0, min(100, $player->getHealth() / max(1, $player->getHealthMax()) * 100));
         $main_content .= '<tr>
                           <td bgcolor="'.$config['site']['lightborder'].'" align="left" width="20%">Health:
@@ -77,8 +77,9 @@ if(!empty($name))
 		                  <div style="width: 100%; height: 3px; border: 1px solid #000;">
 		                  <div style="background: red; width: ' . $hpPercent . '%; height: 3px;">
 		                  </td></tr>';
+        //endregion
 
-        //Mana Bar
+        //region Mana Bar
         $manaPercent = max(0, min(100, $player->getMana() / max(1, $player->getManaMax()) * 100));
         $main_content .= '<tr>
                           <td bgcolor="'.$config['site']['darkborder'].'" align="left">Mana:
@@ -87,22 +88,27 @@ if(!empty($name))
                           <div style="width: 100%; height: 3px; border: 1px solid #000;">
                           <div style="background: blue; width: '.$manaPercent.'%; height: 3px;">
                           </td></tr>';
+        //endregion
 
-        //End of Table
+        //region Experience Bar
+        $expCurrent = Functions::getExpForLevel($player->getLevel());
+        $expNext = Functions::getExpForLevel($player->getLevel() + 1);
+        $expLeft = bcsub($expNext, $player->getExperience(), 0);
+        $expLeftPercent = max(0, min(100, ($player->getExperience() - $expCurrent) / ($expNext - $expCurrent) * 100));
+
+        $main_content .= '<tr>
+                          <td BGCOLOR="' . $config['site']['lightborder'].'" align="left">Next Level:</td>
+                          <td BGCOLOR="'.$config['site']['lightborder'].'" align="left">Need ' . $expLeft . ' EXP to Level ' . ($player->getLevel() + 1) . '.
+                          <div title="' . (100 - $expLeftPercent)  . '% left" style="width: 100%; height: 3px; border: 1px solid #000;">
+                          <div style="background: red; width: '.$expLeftPercent.'%; height: 3px;">
+                          </td>
+                          </tr>';
+        //endregion
+
+
+
 		$main_content .= '</TABLE>';
-
-
-
-
-		$expCurrent = Functions::getExpForLevel($player->getLevel());
-		$expNext = Functions::getExpForLevel($player->getLevel() + 1);
-		$expLeft = bcsub($expNext, $player->getExperience(), 0);
-
-
-		$expLeftPercent = max(0, min(100, ($player->getExperience() - $expCurrent) / ($expNext - $expCurrent) * 100));
-		$main_content .= '<tr><table CELLSPACING="1" CELLPADDING="4"><tr><td BGCOLOR="'.$config['site']['lightborder'].'" align="left" width="20%"><b>Player Level:</b></td><td BGCOLOR="'.$config['site']['lightborder'].'" align="left">'.$player->getLevel().'</td></tr>
-		<tr><td BGCOLOR="'.$config['site']['darkborder'].'" align="left"><b>Player Experience:</b></td><td BGCOLOR="'.$config['site']['darkborder'].'" align="left">' . $player->getExperience() . ' EXP.</td></tr>
-		<tr><td BGCOLOR="' . $config['site']['lightborder'].'" align="left"><b>To Next Level:</b></td><td BGCOLOR="'.$config['site']['lightborder'].'" align="left">You need <b>' . $expLeft . ' EXP</b> to Level <b>' . ($player->getLevel() + 1) . '</b>.<div title="' . (100 - $expLeftPercent)  . '% left" style="width: 100%; height: 3px; border: 1px solid #000;"><div style="background: red; width: '.$expLeftPercent.'%; height: 3px;"></td></tr></table></td></tr></table></tr></TABLE></td>';
+        //endregion Table
 
 		if($config['site']['show_skills_info'])
 		{

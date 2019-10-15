@@ -1,7 +1,4 @@
 <?php
-if(!defined('INITIALIZED'))
-	exit;
-
 class Functions
 {
 	public static $configs = array();
@@ -65,11 +62,11 @@ class Functions
 			case 15:
 				return "Account Trading or Sharing";
 			case 16:
-				return "Threatening Gamemaster";
+				return "Threatening Game Master";
 			case 17:
 				return "Pretending to Have Influence on Rule Enforcement";
 			case 18:
-				return "False Report to Gamemaster";
+				return "False Report to Game Master";
 			case 19:
 				return "Destructive Behaviour";
 			case 20:
