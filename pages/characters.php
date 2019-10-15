@@ -1,7 +1,4 @@
 <?php
-if(!defined('INITIALIZED'))
-	exit;
-
 $name = '';
 if(isset($_REQUEST['name']))
 	$name = (string) $_REQUEST['name'];
@@ -161,18 +158,6 @@ if(!empty($name))
 			</table>
 			<div style="text-align: center;">&nbsp;<br />&nbsp;</div></center>';
 		}
-
-		$main_content .= '<center><table cellspacing="0" cellpadding="0" border="1" width="200">
-				<tbody>
-					<tr bgcolor="' . $config['site']['darkborder'] . '">
-						<td style="text-align: center;"><img src="?subtopic=signature&name=' . urlencode($player->getName()) . '" alt="Signature" /></td>
-					</tr>
-					<tr bgcolor="' . $config['site']['lightborder'] . '">
-						<td style="text-align: center;"><b>Link:</b><input type="text" name="" size="100" value="' . htmlspecialchars($config['server']['url'] . '?subtopic=signature&name=' . urlencode($player->getName())) . '" /></td>
-					</tr>
-				</tbody>
-			</table>
-			<div style="text-align: center;">&nbsp;<br />&nbsp;</div></center>';
 
 		if(isset($config['site']['quests']) && is_array($config['site']['quests']) && count($config['site']['quests']) > 0)
 		{
