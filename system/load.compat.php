@@ -19,17 +19,13 @@ if (isset($_REQUEST['action']))
 else
     $action = '';
 
-$logged = false;
-$account_logged = new Account();
-$group_id_of_acc_logged = $account_logged->getType();
-// with ONLY_PAGE option we want disable useless SQL queries
-if (!ONLY_PAGE) {
-    // logged boolean value: true/false
+    $logged = false;
+    $account_logged = new Account();
     $logged = Visitor::isLogged();
-    // Account object with account of logged player or empty Account
     $account_logged = Visitor::getAccount();
-}
-$layout_name = './layouts/' . Website::getWebsiteConfig()->getValue('layout');
+    $group_id_of_acc_logged = $account_logged->getType();
+
+    $layout_name = './layouts/' . Website::getWebsiteConfig()->getValue('layout');
 
 $title = ucwords($subtopic) . ' - ' . Website::getServerConfig()->getValue('serverName');
 
