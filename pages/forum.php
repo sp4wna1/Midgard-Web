@@ -571,12 +571,6 @@ if($action == 'new_topic')
                     }
                     if(count($errors) == 0)
                     {
-                        $last_post = $account_logged->getCustomField('last_post');
-                        if($last_post+$post_interval-time() > 0 && $group_id_of_acc_logged < $group_not_blocked)
-                            $errors[] = 'You can post one time per '.$post_interval.' seconds. Next post after '.($last_post+$post_interval-time()).' second(s).';
-                    }
-                    if(count($errors) == 0)
-                    {
                         $saved = true;
                         $account_logged->set('last_post', time());
 						$account_logged->save();
