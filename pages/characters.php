@@ -68,27 +68,31 @@ if(!empty($name))
 			$main_content .= '<tr bgcolor="' . $bgcolor . '"><td>Comment:</td><td>' . $comment . '</td></tr>';
 		}
 
-
-        $bgcolor = (($number_of_rows++ % 2 == 1) ?  $config['site']['darkborder'] : $config['site']['lightborder']);
-        $main_content .= '<tr bgcolor="' . $bgcolor . '"><td>Player Health:</td><td>' . htmlspecialchars($player->getBalance()) . ' gold coins</td></tr>';
-
-
+        //Heath Bar
         $hpPercent = max(0, min(100, $player->getHealth() / max(1, $player->getHealthMax()) * 100));
-        $manaPercent = max(0, min(100, $player->getMana() / max(1, $player->getManaMax()) * 100));
+        $main_content .= '<tr>
+                          <td bgcolor="'.$config['site']['lightborder'].'" align="left" width="20%">Health:
+                          </td>
+                          <td bgcolor="'.$config['site']['lightborder'].'" align="left">'.$player->getHealth().'/'.$player->getHealthMax().'
+		                  <div style="width: 100%; height: 3px; border: 1px solid #000;">
+		                  <div style="background: red; width: ' . $hpPercent . '%; height: 3px;">
+		                  </td></tr>';
 
-        $main_content .=
-            '<tr>
-             <td BGCOLOR="'.$config['site']['lightborder'].'" align="left" width="20%"><b>Player Health:</b>
-             </td>
-             <td BGCOLOR="'.$config['site']['lightborder'].'" align="left">'.$player->getHealth().'/'.$player->getHealthMax().'
-		     <div style="width: 100%; height: 3px; border: 1px solid #000;">
-		     <div style="background: red; width: ' . $hpPercent . '%; height: 3px;">
-		     </td></tr>';
-        
+        //Mana Bar
+        $manaPercent = max(0, min(100, $player->getMana() / max(1, $player->getManaMax()) * 100));
+        $main_content .= '<tr>
+                          <td bgcolor="'.$config['site']['darkborder'].'" align="left">Mana:
+                          </td>
+                          <td bgcolor="'.$config['site']['darkborder'].'" align="left">' . $player->getMana() . '/' . $player->getManaMax() . '
+                          <div style="width: 100%; height: 3px; border: 1px solid #000;">
+                          <div style="background: blue; width: '.$manaPercent.'%; height: 3px;">
+                          </td></tr>';
+
+        //End of Table
 		$main_content .= '</TABLE>';
-	
-		   
-//		    <tr><td BGCOLOR="'.$config['site']['darkborder'].'" align="left"><b>Player Mana:</b></td><td BGCOLOR="'.$config['site']['darkborder'].'" align="left">' . $player->getMana() . '/' . $player->getManaMax() . '<div style="width: 100%; height: 3px; border: 1px solid #000;"><div style="background: blue; width: '.$manaPercent.'%; height: 3px;"></td></tr></table><tr>';
+
+
+
 
 		$expCurrent = Functions::getExpForLevel($player->getLevel());
 		$expNext = Functions::getExpForLevel($player->getLevel() + 1);
@@ -145,7 +149,7 @@ if(!empty($name))
 
 		if(isset($config['site']['quests']) && is_array($config['site']['quests']) && count($config['site']['quests']) > 0)
 		{
-			$main_content .= '<TABLE BORDER=0 CELLSPACING=1 CELLPADDING=4 WIDTH=100%><TR BGCOLOR="'.$config['site']['vdarkborder'].'"><TD align="left" COLSPAN=2 CLASS=white><B>Quests</B></TD></TD align="right"></TD></TR>';		
+			$main_content .= '<TABLE BORDER=0 CELLSPACING=1 CELLPADDING=4 WIDTH=100%><TR BGCOLOR="'.$config['site']['vdarkborder'].'"><TD align="left" COLSPAN=2 CLASS=white><B>Quests</B></TD></TD align="right"></TD></TR>';
 			$number_of_quests = 0;
 			foreach($config['site']['quests'] as $questName => $storageID)
 			{
@@ -242,7 +246,7 @@ if(!empty($name))
 		}
 	}
 	else
-		$search_errors[] = 'Character <b>'.htmlspecialchars($name).'</b> does not exist.';	
+		$search_errors[] = 'Character <b>'.htmlspecialchars($name).'</b> does not exist.';
 }
 if(!empty($search_errors))
 {
