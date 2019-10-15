@@ -1,6 +1,4 @@
 <?php
-if(!defined('INITIALIZED'))
-	exit;
 /*
 // top kills - guilds
 $main_content .= '<table border="0" width="100%">
@@ -18,11 +16,6 @@ $main_content .= '<td style="width: 25%; text-align: center;"><a href="?subtopic
 </td>';
 $main_content .= '</tr></table>';
 */
-
-
-
-
-$main_content .= '<h3>No news. Go forum and make new thread on board News.</h3>';
 
 function replaceSmile($text, $smile)
 {
@@ -96,7 +89,7 @@ function showPost($topic, $text, $smile)
     $post .= replaceAll($text, $smile);
     return $post;
 }
-/*
+
     $last_tickers = $SQL->query('SELECT ' . $SQL->tableName('players') . '.' . $SQL->fieldName('name') . ', ' . $SQL->tableName('forum') . '.' . $SQL->fieldName('post_text') . ', ' . $SQL->tableName('forum') . '.' . $SQL->fieldName('post_topic') . ', ' . $SQL->tableName('forum') . '.' . $SQL->fieldName('post_smile') . ', ' . $SQL->tableName('forum') . '.' . $SQL->fieldName('id') . ', ' . $SQL->tableName('forum') . '.' . $SQL->fieldName('replies') . ', ' . $SQL->tableName('forum') . '.' . $SQL->fieldName('post_date') . ' FROM ' . $SQL->tableName('players') . ', ' . $SQL->tableName('forum') . ' WHERE ' . $SQL->tableName('players') . '.' . $SQL->fieldName('id') . ' = ' . $SQL->tableName('forum') . '.' . $SQL->fieldName('author_guid') . ' AND ' . $SQL->tableName('forum') . '.' . $SQL->fieldName('section') . ' = 1 AND ' . $SQL->tableName('forum') . '.' . $SQL->fieldName('first_post') . ' = ' . $SQL->tableName('forum') . '.' . $SQL->fieldName('id') . ' AND ' . $SQL->tableName('forum') . '.' . $SQL->fieldName('post_topic') . '=\'News Ticker\'' . ' ORDER BY ' . $SQL->tableName('forum') . '.' . $SQL->fieldName('last_post') . ' DESC LIMIT 5')->fetchAll();
     if(isset($last_tickers[0]))
     {
@@ -181,5 +174,3 @@ function showPost($topic, $text, $smile)
     }
     else
         $main_content .= '<h3>No news. Go forum and make new thread on board News.</h3>';
-
-*/

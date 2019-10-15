@@ -1,6 +1,4 @@
 <?php
-if(!defined('INITIALIZED'))
-	exit;
 
 $ok = "/[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+\.[a-zA-Z]{2,4}/";
 echo '<?xml version="1.0" encoding="utf-8" standalone="yes"?>';
