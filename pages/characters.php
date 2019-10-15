@@ -69,36 +69,41 @@ if(!empty($name))
 		}
 
         //region Heath Bar
+        $bgcolor = (($number_of_rows++ % 2 == 1) ?  $config['site']['darkborder'] : $config['site']['lightborder']);
         $hpPercent = max(0, min(100, $player->getHealth() / max(1, $player->getHealthMax()) * 100));
+
         $main_content .= '<tr>
-                          <td bgcolor="'.$config['site']['lightborder'].'" align="left" width="20%">Health:
+                          <td bgcolor="'.$bgcolor.'" align="left" width="20%">Health:
                           </td>
-                          <td bgcolor="'.$config['site']['lightborder'].'" align="left">'.$player->getHealth().'/'.$player->getHealthMax().'
+                          <td bgcolor="'.$bgcolor.'" align="left">'.$player->getHealth().'/'.$player->getHealthMax().'
 		                  <div style="width: 100%; height: 3px; border: 1px solid #000;">
 		                  <div style="background: red; width: ' . $hpPercent . '%; height: 3px;">
 		                  </td></tr>';
         //endregion
 
         //region Mana Bar
+        $bgcolor = (($number_of_rows++ % 2 == 1) ?  $config['site']['darkborder'] : $config['site']['lightborder']);
         $manaPercent = max(0, min(100, $player->getMana() / max(1, $player->getManaMax()) * 100));
+
         $main_content .= '<tr>
-                          <td bgcolor="'.$config['site']['darkborder'].'" align="left">Mana:
+                          <td bgcolor="'.$bgcolor.'" align="left">Mana:
                           </td>
-                          <td bgcolor="'.$config['site']['darkborder'].'" align="left">' . $player->getMana() . '/' . $player->getManaMax() . '
+                          <td bgcolor="'.$bgcolor.'" align="left">' . $player->getMana() . '/' . $player->getManaMax() . '
                           <div style="width: 100%; height: 3px; border: 1px solid #000;">
                           <div style="background: blue; width: '.$manaPercent.'%; height: 3px;">
                           </td></tr>';
         //endregion
 
         //region Experience Bar
+        $bgcolor = (($number_of_rows++ % 2 == 1) ?  $config['site']['darkborder'] : $config['site']['lightborder']);
         $expCurrent = Functions::getExpForLevel($player->getLevel());
         $expNext = Functions::getExpForLevel($player->getLevel() + 1);
         $expLeft = bcsub($expNext, $player->getExperience(), 0);
         $expLeftPercent = max(0, min(100, ($player->getExperience() - $expCurrent) / ($expNext - $expCurrent) * 100));
 
         $main_content .= '<tr>
-                          <td BGCOLOR="' . $config['site']['lightborder'].'" align="left">Next Level:</td>
-                          <td BGCOLOR="'.$config['site']['lightborder'].'" align="left">Need ' . $expLeft . ' EXP to Level ' . ($player->getLevel() + 1) . '.
+                          <td BGCOLOR="' . $bgcolor.'" align="left">Next Level:</td>
+                          <td BGCOLOR="'.$bgcolor.'" align="left">Need ' . $expLeft . ' EXP to Level ' . ($player->getLevel() + 1) . '.
                           <div title="' . (100 - $expLeftPercent)  . '% left" style="width: 100%; height: 3px; border: 1px solid #000;">
                           <div style="background: red; width: '.$expLeftPercent.'%; height: 3px;">
                           </td>
