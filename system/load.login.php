@@ -1,6 +1,4 @@
 <?php
-if(!defined('INITIALIZED'))
-	exit;
 
 if(isset($_REQUEST['action']) && $_REQUEST['action'] == 'logout')
 	Visitor::logout();

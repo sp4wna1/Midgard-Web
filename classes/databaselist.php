@@ -1,6 +1,4 @@
 <?php
-if(!defined('INITIALIZED'))
-	exit;
 
 class DatabaseList extends DatabaseHandler implements Iterator, Countable
 {

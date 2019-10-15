@@ -1,7 +1,4 @@
 <?php
-if(!defined('INITIALIZED'))
-	exit;
-
    $pool = '123456789HPXTWQM'; 
    $img_width = 80; 
    $img_height = 30; 

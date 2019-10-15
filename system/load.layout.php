@@ -1,6 +1,4 @@
 <?php
-if(!defined('INITIALIZED'))
-	exit;
 
 $layout_header = '<script type=\'text/javascript\'>
 function GetXmlHttpObject()

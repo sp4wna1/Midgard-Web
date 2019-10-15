@@ -1,7 +1,4 @@
 <?php
-	if (!defined('INITIALIZED')) {
-		exit;
-	}
 
 	if (Website::getServerConfig()->isSetKey('mysqlHost')) {
 		define('SERVERCONFIG_SQL_HOST', 'mysqlHost');

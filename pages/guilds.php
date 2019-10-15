@@ -1,7 +1,4 @@
 <?php
-if(!defined('INITIALIZED'))
-	exit;
-
 if($action == 'login')
 {
 	if(check_guild_name($_REQUEST['guild']))

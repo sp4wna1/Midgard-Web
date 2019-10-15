@@ -1,7 +1,4 @@
 <?php
-if(!defined('INITIALIZED'))
-	exit;
-
 // CONFIG
 $level_limit = 8; // minimum 1 character with 8 lvl on account to post
 $post_interval = 20; // 20 seconds between posts

@@ -1,6 +1,4 @@
 <?php
-if(!defined('INITIALIZED'))
-	exit;
 
 /*-----------------------------------------------------------------------
   Name         : Zaypay.class.php

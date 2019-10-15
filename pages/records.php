@@ -1,6 +1,4 @@
 <?php
-if(!defined('INITIALIZED'))
-	exit;
 
 $main_content .= '<b><center>Players online records on '.$config['server']['serverName'].'</center></b><TABLE BORDER=0 CELLSPACING=1 CELLPADDING=4 WIDTH=100%><TR BGCOLOR="'.$config['site']['vdarkborder'].'"><TD CLASS=white><b><center>Players</center></b></TD><TD class="white"><b><center>Date</center></b></TD></TR>';
 $records = $SQL->query('SELECT * FROM ' . $SQL->tableName('server_record') . ' ORDER BY ' . $SQL->fieldName('record') . ' DESC LIMIT 50;')->fetchAll();

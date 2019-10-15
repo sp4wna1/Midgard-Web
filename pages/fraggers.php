@@ -1,7 +1,4 @@
 <?php
-	if(!defined('INITIALIZED')) {
-		exit;
-	}
 
 	$main_content .= '
 		<div style="text-align: center; font-weight: bold;">Top 30 fraggers on ' . htmlspecialchars($config['server']['serverName']) . '</div>
