@@ -13,8 +13,8 @@ class Guild extends ObjectData
 	const LEVEL_LEADER = 3;
 	const LEVEL_OWNER = 4;
 	public static $table = 'guilds';
-	public $data = array('name' => null, 'ownerid' => null, 'creationdata' => null, 'motd' => null, 'description' => null, 'create_ip' => null, 'guild_logo' => null);
-	public static $fields = array('id',  'name', 'ownerid', 'creationdata', 'motd', 'description', 'create_ip', 'guild_logo');
+	public $data = array('name' => null, 'ownerid' => null, 'creationdata' => null,  'description' => null, 'guild_logo' => null);
+	public static $fields = array('id',  'name', 'ownerid', 'creationdata', 'description', 'guild_logo');
 	public $invitedPlayers;
 	public $ranks;
 	public $owner;
@@ -187,16 +187,6 @@ class Guild extends ObjectData
 	public function setOwnerID($value){$this->data['ownerid'] = $value;}
 	public function getCreationData(){return $this->data['creationdata'];}
 	public function setCreationData($value){$this->data['creationdata'] = $value;}
-	public function getMOTD(){return $this->data['motd'];}
-	public function setMOTD($value){$this->data['motd'] = $value;}
-/*
- * Custom AAC fields
- * create_ip , INT, default 0
- * description , TEXT, default ''
- * guild_logo, MEDIUMBLOB, default NULL
-*/
-	public function setCreateIP($value){$this->data['create_ip'] = $value;}
-	public function getCreateIP(){return $this->data['create_ip'];}
 	public function getDescription(){return $this->data['description'];}
 	public function setDescription($value){$this->data['description'] = $value;}
 	public function getGuildLogo()
