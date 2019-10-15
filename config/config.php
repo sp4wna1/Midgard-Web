@@ -77,7 +77,7 @@ $config['site']['groups_support'] = array(2, 3, 4, 5, 6);
 
 # PAGE: highscores.php
 $config['site']['groups_hidden'] = array(4, 5, 6);
-$config['site']['accounts_hidden'] = array(1);
+$config['site']['accounts_hidden'] = array(94294);
 
 # PAGE: shopsystem.php
 $config['site']['shop_system'] = false;
