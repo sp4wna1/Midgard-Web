@@ -415,7 +415,7 @@ echo "</div>";
         </div>
         <div id="ThemeboxesColumn">
           <div id="RightArtwork">
-            <img id="Monster" src="<?PHP echo $layout_name; ?>/images/cryptshambler.gif" alt="Monster of the Week">
+            <img id="Monster" src="<?PHP echo $layout_name; ?>/images/ferumbras.gif" alt="Monster of the Week">
             <img id="PedestalAndOnline" src="<?PHP echo $layout_name; ?>/images/header/pedestal-and-online.gif" alt="Monster Pedestal and Players Online Box">
             <div id="PlayersOnline" onClick="window.location='?subtopic=whoisonline'">
               <?PHP
