@@ -44,7 +44,7 @@ else
 	$main_content .= '<table width="200" cellspacing="1" cellpadding="0" border="0" align="center">
 		<tbody>
 			<tr>
-				<tr bgcolor="'.$config['site']['darkborder'].'">
+				<tr bgcolor="#FFF">
 				<td><img src="images/vocations/sorcerer.png" /></td>
 				<td><img src="images/vocations/druid.png" /></td>
 				<td><img src="images/vocations/paladin.png" /></td>
