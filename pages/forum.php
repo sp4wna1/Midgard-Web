@@ -3,7 +3,7 @@ if(!defined('INITIALIZED'))
 	exit;
 
 // CONFIG
-$level_limit = 30; // minimum 1 character with 30 lvl on account to post
+$level_limit = 8; // minimum 1 character with 8 lvl on account to post
 $post_interval = 20; // 20 seconds between posts
 $group_not_blocked = $config['site']['access_admin_panel']; // group id of player that can always post, remove post, remove threads
 $posts_per_page = 20;

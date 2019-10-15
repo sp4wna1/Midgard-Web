@@ -1,12 +1,10 @@
 <?php
-if(!defined('INITIALIZED'))
-	exit;
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <title><?PHP echo $title ?></title>
   <meta name="description" content="Tibia is a free massive multiplayer online role playing game (MMORPG)." />
-  <meta name="author" content="Gesior" />
+  <meta name="author" content="Gabriel Prado" />
   <meta http-equiv="content-language" content="en" />
   <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
   <meta name="keywords" content="free online game, free multiplayer game, ots, open tibia server" />
