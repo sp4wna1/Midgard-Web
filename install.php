@@ -400,6 +400,8 @@ elseif($page == 'step')
 			$newPlayer->setSkillCount(5, 0);
 			$newPlayer->setSkillCount(6, 0);
 
+			$newPlayer->setHidden(0);
+
 			$newPlayer->save();
 		}
 

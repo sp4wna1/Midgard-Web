@@ -203,16 +203,7 @@ if(!empty($name))
 		if(!$player->getHideChar())
 		{
 			$main_content .= '<TABLE BORDER=0><TR><TD></TD></TR></TABLE><TABLE BORDER=0 CELLSPACING=1 CELLPADDING=4 WIDTH=100%><TR BGCOLOR="'.$config['site']['vdarkborder'].'"><TD COLSPAN=2 CLASS=white><B>Account Information</B></TD></TR>';
-			if($account->getRLName())
-			{
-				$bgcolor = (($number_of_rows++ % 2 == 1) ?  $config['site']['darkborder'] : $config['site']['lightborder']);
-				$main_content .= '<TR BGCOLOR="' . $bgcolor . '"><TD WIDTH=20%>Real name:</TD><TD>' . $account->getRLName() . '</TD></TR>';
-			}
-			if($account->getLocation())
-			{
-				$bgcolor = (($number_of_rows++ % 2 == 1) ?  $config['site']['darkborder'] : $config['site']['lightborder']);
-				$main_content .= '<TR BGCOLOR="' . $bgcolor . '"><TD WIDTH=20%>Location:</TD><TD>' . $account->getLocation() . '</TD></TR>';
-			}
+
 			$bgcolor = (($number_of_rows++ % 2 == 1) ?  $config['site']['darkborder'] : $config['site']['lightborder']);
 			if($account->getLastLogin())
 				$main_content .= '<TR BGCOLOR="' . $bgcolor . '"><TD WIDTH=20%>Last login:</TD><TD>' . date("j F Y, g:i a", $account->getLastLogin()) . '</TD></TR>';

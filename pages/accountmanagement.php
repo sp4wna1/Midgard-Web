@@ -745,6 +745,7 @@ function NameStateChanged()
 					$char_to_copy->setBalance(0);
 					$char_to_copy->setCreateIP(Visitor::getIP());
 					$char_to_copy->setCreateDate(time());
+					$char_to_copy->setHidden(0);
 					$char_to_copy->setSave(); // make character saveable
 					$char_to_copy->save(); // now it will load 'id' of new player
 					if($char_to_copy->isLoaded())
