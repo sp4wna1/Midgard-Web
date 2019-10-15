@@ -1,9 +1,21 @@
 <?PHP
 # Account Maker Config
-$config['site']['serverPath'] = "C:/otsy/tfs100/";
+$config['site']['serverPath'] = "C:/Users/Administrator/Documents/git/Midgard-Server/";
 $config['site']['useServerConfigCache'] = false;
 $config['site']['server_name'] = 'Midgard';
-$towns_list = array(11 => 'Rookgard');
+$towns_list = array(
+    1 => 'Thais',
+    2 => 'Carlin',
+    3 => 'Kazordoon',
+    4 => "Ab'Dendriel",
+    5 => 'Edron',
+    6 => 'Darashia',
+    7 => 'Venore',
+    8 => 'Ankrahmun',
+    9 => 'Port Hope',
+    10 => 'Home',
+    11 => 'Rookgard'
+);
 
 $config['site']['outfit_images_url'] = 'http://outfit-images.ots.me/outfit.php';
 $config['site']['item_images_url'] = 'http://item-images.ots.me/960/';
