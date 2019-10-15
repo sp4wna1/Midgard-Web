@@ -44,7 +44,7 @@ if(!defined('INITIALIZED'))
             <img id="TibiaLogoArtworkTop" src="<?PHP echo $layout_name; ?>/images/header/tibia-logo-artwork-top.gif" alt="logoartwork" onClick="window.location = '?subtopic=latestnews';">
             <img id="LogoLink" src="<?PHP echo $layout_name; ?>/images/header/tibia-logo-artwork-string.gif" onClick="window.location = '?subtopic=latestnews';" alt="logoartwork">
           </div>
-          
+
   <div id="Loginbox" >
     <div id="LoginTop" style="background-image:url(<?PHP echo $layout_name; ?>/images/general/box-top.gif)" ></div>
     <div id="BorderLeft" class="LoginBorder" style="background-image:url(<?PHP echo $layout_name; ?>/images/general/chain.gif)" ></div>
@@ -52,7 +52,7 @@ if(!defined('INITIALIZED'))
       <div id="LoginstatusText_1" class="LoginstatusText" style="background-image:url(<?PHP echo $layout_name; ?>/images/loginbox/loginbox-font-you-are-not-logged-in.gif)" ></div>
     </div>
     <div id="LoginButtonContainer" style="background-image:url(<?PHP echo $layout_name; ?>/images/loginbox/loginbox-textfield-background.gif)" >
-      <div id="LoginButton" style="background-image:url(<?PHP echo $layout_name; ?>/images/buttons/sbutton.gif)" > 
+      <div id="LoginButton" style="background-image:url(<?PHP echo $layout_name; ?>/images/buttons/sbutton.gif)" >
         <div onClick="LoginButtonAction();" onMouseOver="MouseOverBigButton(this);" onMouseOut="MouseOutBigButton(this);"><div class="Button" style="background-image:url(<?PHP echo $layout_name; ?>/images/buttons/sbutton_over.gif)" ></div>
           <div id="ButtonText" ></div>
         </div>
@@ -153,17 +153,6 @@ if(!defined('INITIALIZED'))
     <div class='RightChain' style='background-image:url(<?PHP echo $layout_name; ?>/images/general/chain.gif);'></div>
   </div>
 </a>
-<?PHP
-if($config['site']['download_page'])
-echo "<a href='?subtopic=download'>
-  <div id='submenu_download' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
-    <div class='LeftChain' style='background-image:url(".$layout_name."/images/general/chain.gif);'></div>
-    <div id='ActiveSubmenuItemIcon_download' class='ActiveSubmenuItemIcon' style='background-image:url(".$layout_name."/images/menu/icon-activesubmenu.gif);'></div>
-    <div class='SubmenuitemLabel'>Downloads</div>
-    <div class='RightChain' style='background-image:url(".$layout_name."/images/general/chain.gif);'></div>
-  </div>
-</a>";
-?>
 </div>
 </div>
 
@@ -282,6 +271,7 @@ echo "<div id='forum' class='menuitem'>
        </div>";
 ?>
 
+    <!-- Start Submenu -->
 <div id='library' class='menuitem'>
 <span onClick="MenuItemAction('library')">
   <div class='MenuButton' style='background-image:url(<?PHP echo $layout_name; ?>/images/menu/button-background.gif);'>
@@ -318,6 +308,18 @@ echo "<a href='?subtopic=serverinfo'>
   </div>
 </a>
 </div>
+    <?PHP
+    if($config['site']['download_page'])
+        echo "<a href='?subtopic=download'>
+    <div id='submenu_download' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+        <div class='LeftChain' style='background-image:url(".$layout_name."/images/general/chain.gif);'></div>
+        <div id='ActiveSubmenuItemIcon_download' class='ActiveSubmenuItemIcon' style='background-image:url(".$layout_name."/images/menu/icon-activesubmenu.gif);'></div>
+        <div class='SubmenuitemLabel'>Downloads</div>
+        <div class='RightChain' style='background-image:url(".$layout_name."/images/general/chain.gif);'></div>
+    </div>
+    </a>";
+    ?>
+    <!-- End Submenu -->
 </div>
 
 <?PHP
@@ -396,7 +398,7 @@ echo "</div>";
     <div class="Border_2">
       <div class="Border_3">
         <div class="BoxContent" style="background-image:url(<?PHP echo $layout_name; ?>/images/content/scroll.gif);">
-	<?PHP echo $main_content; ?> 
+	<?PHP echo $main_content; ?>
       </div>
       </div>
     </div>
@@ -429,7 +431,7 @@ $time = $time_end - $time_start;
           </div>
 
   <div id="Themeboxes">
-          
+
   <div id="NewcomerBox" class="Themebox" style="background-image:url(<?PHP echo $layout_name; ?>/images/themeboxes/newcomer/newcomerbox.gif);">
     <div class="ThemeboxButton" onClick="BigButtonAction('?subtopic=createaccount')" onMouseOver="MouseOverBigButton(this);" onMouseOut="MouseOutBigButton(this);" style="background-image:url(<?PHP echo $layout_name; ?>/images/buttons/sbutton.gif);"><div class="BigButtonOver" style="background-image:url(<?PHP echo $layout_name; ?>/images/buttons/sbutton_over.gif);"></div>
       <div class="ButtonText" style="background-image:url(<?PHP echo $layout_name; ?>/images/buttons/_sbutton_jointibia.gif);"></div>
