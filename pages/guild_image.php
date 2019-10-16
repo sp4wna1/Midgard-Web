@@ -1,6 +1,4 @@
 <?php
-if(!defined('INITIALIZED'))
-	exit;
 $guild_id = (int) $_REQUEST['id'];
 $guild = new Guild($guild_id);
 $guildLogo = $guild->getGuildLogo();

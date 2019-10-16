@@ -1,7 +1,4 @@
 <?php
-if(!defined('INITIALIZED'))
-	exit;
-
 $list = 'experience';
 if(isset($_REQUEST['list']))
 	$list = $_REQUEST['list'];

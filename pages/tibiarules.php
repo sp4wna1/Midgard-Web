@@ -1,7 +1,4 @@
 <?php
-if(!defined('INITIALIZED'))
-	exit;
-
 if($subtopic == "tibiarules")
 {
 	$main_content .= '<B>'.htmlspecialchars($config['site']['server_name']).' Rules</B><BR><TEXTAREA ROWS="25" WRAP="physical" COLS="80" READONLY="true">';

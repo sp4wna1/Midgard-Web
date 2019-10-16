@@ -1,7 +1,4 @@
 <?php
-if(!defined('INITIALIZED'))
-	exit;
-
 $world_name = $config['server']['serverName'];
 $main_content .= '<center><h2>Houses</h2></center>';
 
