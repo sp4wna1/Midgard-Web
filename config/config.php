@@ -36,7 +36,7 @@ $config['site']['select_flag'] = true;
 # Create Character Options
 $config['site']['newchar_vocations'] = array(0 => 'Rook Sample');
 $config['site']['newchar_towns'] = array(11);
-$config['site']['max_players_per_account'] = 7;
+$config['site']['max_players_per_account'] = 4;
 
 # Emails Config
 $config['site']['send_emails'] = false;
