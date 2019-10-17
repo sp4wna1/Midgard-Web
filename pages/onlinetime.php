@@ -1,7 +1,4 @@
 <?php
-if(!defined('INITIALIZED'))
-	exit;
-
 /*
 Script (globalevent, type: think, interval: 60 or 60000 [tfs 0.4]):
 function onThink()

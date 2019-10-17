@@ -1,7 +1,4 @@
 <?php
-if(!defined('INITIALIZED'))
-	exit;
-
 if($action == "") {
 $main_content .= '
 

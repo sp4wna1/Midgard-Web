@@ -1,7 +1,4 @@
 <?php
-if(!defined('INITIALIZED'))
-	exit;
-
 $orderby = 'name';
 if(isset($_REQUEST['order']))
 {

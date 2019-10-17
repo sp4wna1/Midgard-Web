@@ -1,6 +1,4 @@
 <?php
-if(!defined('INITIALIZED'))
-	exit;
 
 $time_start = microtime(true);
 session_start();

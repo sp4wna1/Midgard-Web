@@ -1,6 +1,4 @@
 <?php
-if(!defined('INITIALIZED'))
-	exit;
 
 class AccountBan extends ObjectData
 {

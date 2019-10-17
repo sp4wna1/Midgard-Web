@@ -1,7 +1,4 @@
 <?php
-if(!defined('INITIALIZED'))
-	exit;
-
 class ItemAttributes
 {
 	public $attributes = array();
