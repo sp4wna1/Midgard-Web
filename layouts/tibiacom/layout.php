@@ -40,7 +40,7 @@
         <div id="MenuColumn">
           <div id="LeftArtwork">
             <img id="TibiaLogoArtworkTop" src="<?PHP echo $layout_name; ?>/images/header/tibia-logo-artwork-top.gif" alt="logoartwork" onClick="window.location = '?subtopic=latestnews';">
-            <img id="LogoLink" src="<?PHP echo $layout_name; ?>/images/header/tibia-logo-artwork-string.gif" onClick="window.location = '?subtopic=latestnews';" alt="logoartwork">
+            <img id="LogoLink" src="<?PHP echo $layout_name; ?>/images/header/tibia-logo-artwork-string.png" onClick="window.location = '?subtopic=latestnews';" alt="logoartwork">
           </div>
 
   <div id="Loginbox" >
