@@ -9,7 +9,7 @@ $main_content .= '<table style="width:100%;margin-left:auto;margin-right:auto">
 
 //region Client Link
 $main_content .= '<tr bgcolor="' . $config['site']['lightborder'] . '">
-                  <td style="font-weight:bold;width:150px">Client 7.72</td>
+                  <td style="font-weight:bold;width:150px">Client próprio</td>
                   <td><a href=' . $config['site']['client'] . '>Link</a></td>
                   </tr>';
 //endregion
