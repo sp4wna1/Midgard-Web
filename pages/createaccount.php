@@ -148,6 +148,12 @@ function EmailStateChanged()
 			}
 		}
 	}
+
+function generate(max, min){
+	let accountNumber = Math.floor(Math.random() * (max - min) ) + min;
+	document.getElementById("account_name").value = accountNumber;
+	checkAccount();
+}
 	</script>';
 	$main_content .= 'To play on '.htmlspecialchars($config['server']['serverName']).' you need an account. 
 						All you have to do to create your new account is to enter your email address, password to new account, verification code from picture and to agree to the terms presented below. 
@@ -159,9 +165,18 @@ function EmailStateChanged()
 						<TR><TD BGCOLOR="'.$config['site']['darkborder'].'"><TABLE BORDER=0 CELLSPACING=8 CELLPADDING=0>
 						  <TR><TD>
 						    <TABLE BORDER=0 CELLSPACING=5 CELLPADDING=0>';
-	$main_content .= '<TR><TD width="150" valign="top"><B>Account name: </B></TD><TD colspan="2"><INPUT id="account_name" NAME="reg_name" onkeyup="checkAccount();" VALUE="" SIZE=30 MAXLENGTH=30><BR><font size="1" face="verdana,arial,helvetica">(Please enter your new account number)</font></TD></TR>
-					  <TR><TD width="150"><b>Name status:</b></TD><TD colspan="2"><b><div id="acc_name_check">Please enter your account number.</div></b></TD></TR>
-					<TR><TD width="150" valign="top"><B>Email address: </B></TD><TD colspan="2"><INPUT id="email" NAME="reg_email" onkeyup="checkEmail();" VALUE="" SIZE=30 MAXLENGTH=50><BR><font size="1" face="verdana,arial,helvetica">(Your email address is required to recovery an '.htmlspecialchars($config['server']['serverName']).' account)</font></TD></TR>
+	$main_content .= '
+					 <TR>
+					 <TD width="150" valign="top">
+					 <B>Account number: </B>
+					 </TD>
+					 <TD colspan="2">
+					 <INPUT id="account_name" NAME="reg_name" onkeyup="checkACcount();" onclick="generate(99999999, 9999);" size="30" maxlength="11" readonly>
+					 </TD>
+					 </TR>
+				
+					 <TR><TD width="150"><b>Name status:</b></TD><TD colspan="2"><b><div id="acc_name_check">Please enter your account number.</div></b></TD></TR>
+					 <TR><TD width="150" valign="top"><B>Email address: </B></TD><TD colspan="2"><INPUT id="email" NAME="reg_email" onkeyup="checkEmail();" VALUE="" SIZE=30 MAXLENGTH=50><BR><font size="1" face="verdana,arial,helvetica">(Your email address is required to recovery an '.htmlspecialchars($config['server']['serverName']).' account)</font></TD></TR>
 					  <TR><TD width="150"><b>Email status:</b></TD><TD colspan="2"><b><div id="email_check">Please enter your e-mail.</div></b></TD></TR>';
 	if(!$config['site']['create_account_verify_mail'])
 	$main_content .= '<script type="text/javascript">var verifpass=1;</script>
