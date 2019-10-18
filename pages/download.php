@@ -14,11 +14,8 @@ $main_content .= '<tr bgcolor="' . $config['site']['lightborder'] . '">
                   </tr>';
 //endregion
 
-//region Ip Changer Link
-$main_content .= '<tr bgcolor="' . $config['site']['darkborder'] . '">
-                  <td style="font-weight:bold;width:150px">Ip Changer</td>
-                  <td><a href=' . $config['site']['ip_changer'] . '>Link</a></td>
-                  </tr></table>';
+//region end Table
+$main_content .= '</table>';
 //endregion
 
 

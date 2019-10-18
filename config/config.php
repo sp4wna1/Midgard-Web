@@ -106,5 +106,4 @@ $config['site']['serverinfo_page'] = true;
 
 # PAGE: downloads.php
 $config['site']['download_page'] = true;
-$config['site']['client'] = "https://tibiabr.com/?ddownload=8088";
-$config['site']['ip_changer'] = "https://otland.net/attachments/ipchanger-exe.32828";
+$config['site']['client'] = "https://mega.nz/#!geJBDIrL!D_kjLmWBzYGUH3U9u6nIgmAL7xPpu56bbfqSYvXvErE";
