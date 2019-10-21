@@ -1,9 +1,11 @@
 <?PHP
+
+$towns_list = array(1 => 'Thais', 2 => 'Carlin', 3 => 'Kazordoon', 4 => "Ab'Dendriel", 5 => 'Edron', 6 => 'Darashia', 7 => 'Venore', 8 => 'Ankrahmun', 9 => 'Port Hope', 10 => 'Home', 11 => 'Rookgard');
+
 # Account Maker Config
 $config['site']['serverPath'] = $_SERVER['DOCUMENT_ROOT'] . "/Midgard-Server/";
 $config['site']['useServerConfigCache'] = false;
 $config['site']['server_name'] = 'Midgard';
-$towns_list = array(1 => 'Thais', 2 => 'Carlin', 3 => 'Kazordoon', 4 => "Ab'Dendriel", 5 => 'Edron', 6 => 'Darashia', 7 => 'Venore', 8 => 'Ankrahmun', 9 => 'Port Hope', 10 => 'Home', 11 => 'Rookgard');
 
 $config['site']['outfit_images_url'] = 'http://outfit-images.ots.me/outfit.php';
 $config['site']['item_images_url'] = 'http://item-images.ots.me/960/';
