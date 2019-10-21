@@ -1,6 +1,6 @@
 <?PHP
 # Account Maker Config
-$config['site']['serverPath'] = $_SERVER['DOCUMENT_ROOT'] . "/Midgard-Web/Midgard-Server/";
+$config['site']['serverPath'] = $_SERVER['DOCUMENT_ROOT'] . "/Midgard-Server/";
 $config['site']['useServerConfigCache'] = false;
 $config['site']['server_name'] = 'Midgard';
 $towns_list = array(
