@@ -2,7 +2,7 @@
 # Account Maker Config
 $config['site']['serverPath'] = $_SERVER['DOCUMENT_ROOT'] . "/Midgard-Web/Midgard-Server/";
 $config['site']['useServerConfigCache'] = false;
-$config['site']['server_name'] = 'Midgard';g
+$config['site']['server_name'] = 'Midgard';
 $towns_list = array(
     1 => 'Thais',
     2 => 'Carlin',
