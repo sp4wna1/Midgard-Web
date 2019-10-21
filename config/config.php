@@ -1,8 +1,8 @@
 <?PHP
 # Account Maker Config
-$config['site']['serverPath'] = "C:/Users/Administrator/Documents/git/Midgard-Server/";
+$config['site']['serverPath'] = $_SERVER['DOCUMENT_ROOT'] . "/Midgard-Web/Midgard-Server/";
 $config['site']['useServerConfigCache'] = false;
-$config['site']['server_name'] = 'Midgard';
+$config['site']['server_name'] = 'Midgard';g
 $towns_list = array(
     1 => 'Thais',
     2 => 'Carlin',
