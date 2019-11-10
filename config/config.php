@@ -96,4 +96,4 @@ $config['site']['serverinfo_page'] = true;
 
 # PAGE: downloads.php
 $config['site']['download_page'] = true;
-$config['site']['client'] = "https://mega.nz/#!geJBDIrL!D_kjLmWBzYGUH3U9u6nIgmAL7xPpu56bbfqSYvXvErE";
+$config['site']['client'] = "https://mega.nz/#!gWJR3S5b!zyEI0dqsiJ25ovRzIxrhcBfFfwQGjY3OE8IAmjwyzrY";
