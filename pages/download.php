@@ -11,6 +11,10 @@ $main_content .= '<table style="width:100%;margin-left:auto;margin-right:auto">
 $main_content .= '<tr bgcolor="' . $config['site']['lightborder'] . '">
                   <td style="font-weight:bold;width:150px">Client próprio</td>
                   <td><a href=' . $config['site']['client'] . '>Link</a></td>
+                  <td style="font-weight:bold;width:150px">Ucrtbased.dll</td>
+                  <td><a href=' . $config['site']['ucrtbased'] . '>Link</a></td>
+                  <td style="font-weight:bold;width:150px">Vcruntime.dll</td>
+                  <td><a href=' . $config['site']['vcruntime'] . '>Link</a></td>
                   </tr>';
 //endregion
 
