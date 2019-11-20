@@ -82,10 +82,13 @@ $config['site']['groups_hidden'] = array(4, 5, 6);
 $config['site']['accounts_hidden'] = array(974294);
 
 # PAGE: shopsystem.php
-$config['site']['shop_system'] = false;
+$config['site']['shop_system'] = true;
 
 # PAGE: lostaccount.php
 $config['site']['email_lai_sec_interval'] = 180;
+
+# PAGE: bountybug.php
+$config['site']['bounty_system'] = true;
 
 # Layout Config
 $config['site']['layout'] = 'tibiacom';
