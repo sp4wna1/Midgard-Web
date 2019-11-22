@@ -1,0 +1,10 @@
+#selected-counter {
+    border: none;
+    background: transparent;
+    text-align: center;
+    font-weight: bold;
+}
+
+#submit {
+    margin-top: 10px;
+}

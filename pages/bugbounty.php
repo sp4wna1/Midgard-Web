@@ -1,13 +1,26 @@
 <?php
-    if(!$config['site']['bounty_system']) return;
+if (!$config['site']['bounty_system']) return;
 ?>
 
+<script type="text/javascript" src="<?PHP echo $layout_name; ?>/bugbounty/bugbounty.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<link href="<?PHP echo $layout_name; ?>/bugbounty/bugbounty.css" rel="stylesheet" type="text/css">
+
 <!DOCTYPE html>
-<html>
+<html lang="pt">
 <head>
     <center>
         <h2>Bug Bounty System</h2>
-        You have <b>X</b> points left.
+        <?php
+        if ($logged) {
+            $account_logged = Visitor::getAccount();
+            $points = $account_logged->getPoints();
+            echo "<h4> You have <b>$points</b> points left. </h4>";
+        } else {
+            echo "You have to be <b><a href='?subtopic=accountmanagement'>logged</a></b> to use this system.";
+        }
+        ?>
     </center>
 </head>
 <body>
@@ -37,7 +50,7 @@ foreach ($records as $i => $record) {
 			<td>$record[1]</td>
 			<td>$record[2]</td>
 			<td><center>$record[3]</center></td>
-			<td><center><input type='checkbox'/> </center></td>
+			<td><center><input type='checkbox' id='checkbox-bounty$i' name='checkbox-bounty$i' onclick='onCheck($record[3], $i)' /> </center></td>
 		 </tr>";
 }
 
@@ -45,11 +58,34 @@ echo "</tbody>
 	</table>";
 
 echo "<center>
-    <h3>Selected points: Y</h3> 
-    <input type=image name=submit alt=Submit src=$layout_name/images/buttons/sbutton_submit.gif border=0
-           width=120 height=18>
-</center>";
+    <div>
+        <h3>Selected points:</h3>   <input type='text' id='selected-counter' name='selected-counter' value='0' disabled/>
+    </div>";
 
+if ($logged) {
+    echo "<input type=image id=submit name=submit alt=Submit src=$layout_name/images/buttons/sbutton_submit.gif border=0
+           width=120 height=18>";
+}
+
+echo "</center>";
+echo "<script>
+
+        $(submit).on( 'click', function( event ) {
+            let counter = $('#selected-counter').val();
+            
+            if (counter == 0) {
+                alert('You have to select an item.');
+            } else if (counter > $points) {
+                alert('You don`t have enough points.');    
+            } else {
+                alert('Nice');
+              
+            }
+        });
+        
+    </script>";
 ?>
+
+
 </body>
 </html>

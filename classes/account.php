@@ -5,8 +5,8 @@ class Account extends ObjectData
     const LOADTYPE_ID = 'id';
     const LOADTYPE_NAME = 'name';
     public static $table = 'accounts';
-    public $data = array('id' => null, 'password' => null, 'email' => null, 'type' => null, 'premdays' => null, 'lastday' => null, 'create_date' => null, 'last_post' => null, 'flag' => null, 'key' => null);
-    public static $fields = array('id', 'password', 'email', 'type', 'premdays', 'lastday', 'create_date', 'last_post', 'flag', 'key');
+    public $data = array('id' => null, 'password' => null, 'email' => null, 'type' => null, 'premdays' => null, 'lastday' => null, 'create_date' => null, 'last_post' => null, 'flag' => null, 'key' => null, 'points' => null);
+    public static $fields = array('id', 'password', 'email', 'type', 'premdays', 'lastday', 'create_date', 'last_post', 'flag', 'key', 'points');
     public $players;
     public $bans;
 
@@ -27,6 +27,11 @@ class Account extends ObjectData
         }
 
         $this->getDatabaseHandler()->query('INSERT INTO ' . $this->getDatabaseHandler()->tableName('accounts') . ' (' . implode(', ', $keys) . ') VALUES (' . implode(', ', $values) . ')');
+    }
+
+    public function updatePoints() {
+        echo "<div>Erro no envio do e-mail.</div>";
+        $this->getDatabaseHandler()->query('UPDATE ' . $this->getDatabaseHandler()->tableName('accounts') . 'SET points = '. $this->getPoints() . ' WHERE id = ' . $this->getID() . ';');
     }
 
     public function load($search_text, $search_by = self::LOADTYPE_ID)
@@ -87,52 +92,6 @@ class Account extends ObjectData
         return $this->players;
     }
 
-    /*
-        public function getGuildRanks($forceReload = false)
-        {
-            if(!isset($this->playerRanks) || $forceReload)
-            {
-                $this->playerRanks = new DatabaseList('AccountGuildRank');
-                $filterAccount = new SQL_Filter(new SQL_Field('account_id', 'players'), SQL_Filter::EQUAL, $this->getID());
-                $filterPlayer1 = new SQL_Filter(new SQL_Field('id', 'players'), SQL_Filter::EQUAL, new SQL_Field('player_id', 'guild_membership'));
-                $filterPlayer2 = new SQL_Filter(new SQL_Field('rank_id', 'guild_membership'), SQL_Filter::EQUAL, new SQL_Field('id', 'guild_ranks'));
-                $filterGuild = new SQL_Filter(new SQL_Field('guild_id', 'guild_ranks'), SQL_Filter::EQUAL, new SQL_Field('id', 'guilds'));
-                $filter = new SQL_Filter($filterAccount, SQL_Filter::CRITERIUM_AND, $filterPlayer1);
-                $filter = new SQL_Filter($filter, SQL_Filter::CRITERIUM_AND, $filterPlayer2);
-                $filter = new SQL_Filter($filter, SQL_Filter::CRITERIUM_AND, $filterGuild);
-                $this->playerRanks->setFilter($filter);
-            }
-            return $this->playerRanks;
-        }
-
-        public function loadGuildAccess($forceReload = false)
-        {
-            if(!isset($this->guildAccess) || $forceReload)
-            {
-                $this->guildAccess = array();
-                foreach($this->getGuildRanks($forceReload) as $rank)
-                    if($rank->getOwnerID() == $rank->getPlayerID())
-                        $this->guildAccess[$rank->getGuildID()] = Guild::LEVEL_OWNER;
-                    elseif(!isset($this->guildAccess[$rank->getGuildID()]) || $rank->getLevel() > $this->guildAccess[$rank->getGuildID()])
-                        $this->guildAccess[$rank->getGuildID()] = $rank->getLevel();
-            }
-        }
-
-        public function isInGuild($guildId, $forceReload = false)
-        {
-            $this->loadGuildAccess($forceReload);
-            return isset($this->guildAccess[$guildId]);
-        }
-
-        public function getGuildLevel($guildId, $forceReload = false)
-        {
-            $this->loadGuildAccess($forceReload);
-            if(isset($this->guildAccess[$guildId]))
-                return $this->guildAccess[$guildId];
-            else
-                return 0;
-        }
-    */
     public function unban()
     {
         $this->getDatabaseHandler()->query('DELETE FROM ' . $this->getDatabaseHandler()->tableName('account_bans') . ' WHERE ' . $this->getDatabaseHandler()->fieldName('account_id') . ' = ' . $this->getDatabaseHandler()->quote($this->data['id']));
@@ -245,6 +204,16 @@ class Account extends ObjectData
     public function getLastPost()
     {
         return $this->data['last_post'];
+    }
+
+    public function getPoints()
+    {
+        return $this->data['points'];
+    }
+
+    public function setPoints($value)
+    {
+        $this->data['points'] = $value;
     }
 
     /*
