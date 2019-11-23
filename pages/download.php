@@ -16,13 +16,10 @@ $main_content .= '<tr bgcolor="' . $config['site']['lightborder'] . '">
                   <td style="font-weight:bold;width:150px">Ucrtbased.dll</td>
                   </tr>
                   <tr bgcolor="' . $config['site']['lightborder'] . '">
-                  <td><a href=' . $config['site']['ucrtbased'] . '>Link</a></td>
-                  </tr>
-                  <tr bgcolor="' . $config['site']['darkborder'] . '">
                   <td style="font-weight:bold;width:150px">Vcruntime.dll</td>
                   <td><a href=' . $config['site']['vcruntime'] . '>Link</a></td>
                   </tr>
-                  <tr bgcolor="' . $config['site']['lightborder'] . '">
+                  <tr bgcolor="' . $config['site']['darkborder'] . '">
                   <td style="font-weight:bold;width:150px">Msvcp140d.dll</td>
                   <td><a href=' . $config['site']['msvcp140d'] . '>Link</a></td>
                   </tr>';
