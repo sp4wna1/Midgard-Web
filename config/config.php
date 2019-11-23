@@ -96,6 +96,6 @@ $config['site']['serverinfo_page'] = true;
 
 # PAGE: downloads.php
 $config['site']['download_page'] = true;
-$config['site']['client'] = "https://mega.nz/#!4OwRCaoD!gQVyPsmaNwWhc3KeSnd_961TP_T-mg8-2ABJGSlV4GY";
+$config['site']['client'] = "https://mega.nz/#!cbwzQQaB!id0CMcaEOCryuvpsQm1uB2IJmSv9RXtI7KXmBAhiChI";
 $config['site']['ucrtbased'] = "https://mega.nz/#!0eJC0AiQ!FWVoIg7oMDTof5wjZDu4cs2L1kyk46MHcTwp22FCWRg";
 $config['site']['vcruntime'] = "https://mega.nz/#!wTYg1aTR!b0kXtxzeLOHqiDMlnQl-wJGCdyF0BfiT5zrsezheEoM";
