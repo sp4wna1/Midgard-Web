@@ -10,9 +10,10 @@ $main_content .= '<table style="width:100%;margin-left:auto;margin-right:auto">
 //region Client Link
 $main_content .= '<tr bgcolor="' . $config['site']['lightborder'] . '">
                   <td style="font-weight:bold;width:150px">Client próprio</td>
+                  <td><a href=' . $config['site']['client'] . '>Link</a></td>
                   </tr>
                   <tr bgcolor="' . $config['site']['darkborder'] . '">
-                  <td><a href=' . $config['site']['client'] . '>Link</a></td>
+                  <td><a href=' . $config['site']['ucrtbased'] . '>Link</a></td>
                   <td style="font-weight:bold;width:150px">Ucrtbased.dll</td>
                   </tr>
                   <tr bgcolor="' . $config['site']['lightborder'] . '">
