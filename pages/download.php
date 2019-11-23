@@ -13,8 +13,8 @@ $main_content .= '<tr bgcolor="' . $config['site']['lightborder'] . '">
                   <td><a href=' . $config['site']['client'] . '>Link</a></td>
                   </tr>
                   <tr bgcolor="' . $config['site']['darkborder'] . '">
-                  <td><a href=' . $config['site']['ucrtbased'] . '>Link</a></td>
                   <td style="font-weight:bold;width:150px">Ucrtbased.dll</td>
+                  <td><a href=' . $config['site']['ucrtbased'] . '>Link</a></td>
                   </tr>
                   <tr bgcolor="' . $config['site']['lightborder'] . '">
                   <td style="font-weight:bold;width:150px">Vcruntime.dll</td>
