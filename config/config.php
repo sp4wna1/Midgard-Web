@@ -29,8 +29,8 @@ $config['site']['newchar_towns'] = array(11);
 $config['site']['max_players_per_account'] = 4;
 
 # Emails Config
-$config['site']['send_emails'] = false;
-$config['site']['mail_address'] = "xxxx@gmx.com";
+$config['site']['send_emails'] = true;
+$config['site']['mail_address'] = "account@midgard.com.br";
 $config['site']['smtp_enabled'] = true;
 $config['site']['smtp_host'] = "mail.gmx.com";
 $config['site']['smtp_port'] = 25;
@@ -82,11 +82,17 @@ $config['site']['groups_hidden'] = array(4, 5, 6);
 $config['site']['accounts_hidden'] = array(974294);
 
 # PAGE: shopsystem.php
-$config['site']['shop_system'] = false;
+$config['site']['shop_system'] = true;
 
-# PAGE: lostaccount.php
+# PAGE: lostpassword.php
 $config['site']['email_lai_sec_interval'] = 180;
 
+<<<<<<< Updated upstream
+=======
+# PAGE: bountybug.php
+$config['site']['bounty_system'] = true;
+
+>>>>>>> Stashed changes
 # Layout Config
 $config['site']['layout'] = 'tibiacom';
 $config['site']['vdarkborder'] = '#505050';
