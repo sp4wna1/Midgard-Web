@@ -87,12 +87,9 @@ $config['site']['shop_system'] = true;
 # PAGE: lostpassword.php
 $config['site']['email_lai_sec_interval'] = 180;
 
-<<<<<<< Updated upstream
-=======
 # PAGE: bountybug.php
-$config['site']['bounty_system'] = true;
+$config['site']['bounty_system'] = false;
 
->>>>>>> Stashed changes
 # Layout Config
 $config['site']['layout'] = 'tibiacom';
 $config['site']['vdarkborder'] = '#505050';
