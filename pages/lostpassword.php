@@ -1,8 +1,9 @@
 <?php
 require 'vendor/autoload.php';
 
-if (!$config['site']['send_emails']) {
-    $main_content .= '<b>Recovery Password in maintenance. Contact with admin to get help.</b>';
+if (!$config['site']['recovery_account']) {
+    $main_content .= 'Recovery Password in maintenance. Contact with admin to get help.';
+    return;
 }
 
 $emailFrom = $config['site']['mail_address'];
