@@ -2,41 +2,36 @@
 require 'vendor/autoload.php';
 
 if (!$config['site']['send_emails']) {
-    $main_content .= '<b>Account maker is not configured to send e-mails, you can\'t use Lost Password Interface. Contact with admin to get help.</b>';
+    $main_content .= '<b>Recovery Password in maintenance. Contact with admin to get help.</b>';
 }
 
-function sendEmail()
+$emailFrom = $config['site']['mail_address'];
+
+function sendEmail($emailTo, $accountNumber)
 {
-    $sendgrid = new SendGrid("SENDGRID_APIKEY");
-    $email    = new SendGrid\Email();
+    global $emailFrom;
 
-    $email->addTo("test@sendgrid.com")
-        ->setFrom("you@youremail.com")
-        ->setSubject("Sending with SendGrid is Fun")
-        ->setHtml("and easy to do anywhere, even with PHP");
-
-    $sendgrid->send($email);
+    $sendgrid = new SendGrid("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");
+    $email = new \SendGrid\Mail\Mail();
 
     $email = new SendGrid\Mail\Mail();
-    $email->setFrom($config['site']['mail_address'], "Midgard - Recovery Account");
-    $email->addTo(document . getElementById("email") . value);
+    $email->setFrom($emailFrom, "Midgard - Recovery Account");
+    $email->addTo($emailTo);
     $email->setSubject("Forgot Account - New Password");
     $email->addContent(
         "text/html", "<strong>and easy to do anywhere, even with PHP</strong>"
     );
 
-    $sendgrid = new \SendGrid();
     try {
-
-        $response = $sendgrid->send($email);
-        print $response->statusCode() . "\n";
-        print_r($response->headers());
-        print $response->body() . "\n";
+        //$sendgrid->send($email);
     } catch (Exception $e) {
-        echo 'Caught exception: ' . $e->getMessage() . "\n";
+        echo 'Something is wrong. Call the admin from server.';
     }
 }
 
+if (isset($_POST['sendemail'])) {
+    sendEmail($_POST['email'], $_POST['number']);
+}
 ?>
 
 
@@ -51,7 +46,7 @@ function sendEmail()
     <br>
     <br>
 
-    <form>
+    <form method="post">
         <table width="50%" border=0 cellspacing=1 cellpadding=4>
             <tbody>
             <tr>
@@ -61,11 +56,11 @@ function sendEmail()
                 <table border="0" cellspacing="8" cellpadding="0">
                     <tr>
                         <td width="150"><b>E-mail Address:</b></td>
-                        <td width="150" colspan="2"><input type="text" id="email" size=30 maxlength=50></td>
+                        <td width="150" colspan="2"><input type="text" name="email" id="email" size=30 maxlength=50></td>
                     </tr>
                     <tr>
                         <td width="150"><b>Account Number:</b></td>
-                        <td width="150" colspan="2"><input type="text" id="number" size=30 maxlength=11></td>
+                        <td width="150" colspan="2"><input type="text" name="number" id="number" size=30 maxlength=11></td>
                     </tr>
                 </table>
             </td>
@@ -74,8 +69,9 @@ function sendEmail()
 
         <br>
 
-        <input type=image id=submit name=submit alt=submit src=<?php echo "$layout_name/images/buttons/sbutton_submit.gif" ?> border=0
-                     width=120 height=18 onclick="sendEmail()">
+        <input type=submit name=sendemail
+               src=<?php echo "$layout_name/images/buttons/sbutton_submit.gif" ?> border=0
+               width=120 height=18>
     </form>
 
 </div>
