@@ -20,7 +20,7 @@ $config['site']['create_account_verify_mail'] = false;
 $config['site']['verify_code'] = false;
 $config['site']['email_days_to_change'] = 3;
 $config['site']['newaccount_premdays'] = 30;
-$config['site']['send_register_email'] = false;
+$config['site']['send_register_email'] = true;
 $config['site']['select_flag'] = true;
 
 # Create Character Options
@@ -29,14 +29,10 @@ $config['site']['newchar_towns'] = array(11);
 $config['site']['max_players_per_account'] = 4;
 
 # Emails Config
-$config['site']['send_emails'] = false;
-$config['site']['mail_address'] = "xxxx@gmx.com";
+$config['site']['send_emails'] = true;
+$config['site']['recovery_account'] = false;
+$config['site']['mail_address'] = "account@midgard.com.br";
 $config['site']['smtp_enabled'] = true;
-$config['site']['smtp_host'] = "mail.gmx.com";
-$config['site']['smtp_port'] = 25;
-$config['site']['smtp_auth'] = false;
-$config['site']['smtp_user'] = "xxx@gmx.com";
-$config['site']['smtp_pass'] = "xxxx";
 
 # PAGE: whoisonline.php
 $config['site']['private-servlist.com_server_id'] = 0;
@@ -59,7 +55,7 @@ $config['site']['generate_new_reckey_price'] = 500;
 
 # PAGE: guilds.php
 $config['site']['guild_need_level'] = 15;
-$config['site']['guild_need_pacc'] = false;
+$config['site']['guild_need_pacc'] = true;
 $config['site']['guild_image_size_kb'] = 50;
 $config['site']['guild_description_chars_limit'] = 2000;
 $config['site']['guild_description_lines_limit'] = 6;
@@ -84,8 +80,11 @@ $config['site']['accounts_hidden'] = array(974294);
 # PAGE: shopsystem.php
 $config['site']['shop_system'] = false;
 
-# PAGE: lostaccount.php
+# PAGE: lostpassword.php
 $config['site']['email_lai_sec_interval'] = 180;
+
+# PAGE: bountybug.php
+$config['site']['bounty_system'] = false;
 
 # Layout Config
 $config['site']['layout'] = 'tibiacom';

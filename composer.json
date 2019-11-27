@@ -1,5 +1,6 @@
 {
   "require": {
-    "ext-bcmath": "*"
+    "ext-bcmath": "*",
+    "sendgrid/sendgrid": "7.3.0"
   }
 }
