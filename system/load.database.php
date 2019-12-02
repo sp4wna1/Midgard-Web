@@ -6,11 +6,11 @@ define('SQL_PASS', getenv('SERVERCONFIG_SQL_PASS'));
 define('SQL_DATABASE', getenv('SERVERCONFIG_SQL_DATABASE'));
 
 Website::setDatabaseDriver(Database::DB_MYSQL);
-Website::getDBHandle()->setDatabaseHost(Website::getServerConfig()->getValue(SQL_HOST));
-Website::getDBHandle()->setDatabasePort(Website::getServerConfig()->getValue(SQL_PORT));
-Website::getDBHandle()->setDatabaseName(Website::getServerConfig()->getValue(SQL_DATABASE));
-Website::getDBHandle()->setDatabaseUsername(Website::getServerConfig()->getValue(SQL_USER));
-Website::getDBHandle()->setDatabasePassword(Website::getServerConfig()->getValue(SQL_PASS));
+Website::getDBHandle()->setDatabaseHost(SQL_HOST);
+Website::getDBHandle()->setDatabasePort(SQL_PORT);
+Website::getDBHandle()->setDatabaseName(SQL_DATABASE);
+Website::getDBHandle()->setDatabaseUsername(SQL_USER);
+Website::getDBHandle()->setDatabasePassword(SQL_PASS);
 Website::updatePasswordEncryption();
 
 $SQL = Website::getDBHandle();
