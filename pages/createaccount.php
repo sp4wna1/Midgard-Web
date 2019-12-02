@@ -171,7 +171,7 @@ function generate(max, min){
 					 <B>Account number: </B>
 					 </TD>
 					 <TD colspan="2">
-					 <INPUT id="account_name" NAME="reg_name" onkeyup="checkACcount();" onclick="generate(99999999, 9999);" size="30" maxlength="11" readonly>
+					 <INPUT id="account_name" NAME="reg_name" onkeyup="checkAccount();" onclick="generate(99999999, 9999);" size="30" maxlength="11" readonly>
 					 </TD>
 					 </TR>
 				
@@ -381,7 +381,7 @@ if ($action == "saveaccount") {
             }
         }
 
-        sendEmail();
+        recoveryPassword();
 
         $main_content .= '</TD></TR></TABLE></TD></TR></TABLE><BR><BR>';
     } else {

@@ -30,7 +30,7 @@ $config['site']['max_players_per_account'] = 4;
 
 # Emails Config
 $config['site']['send_emails'] = true;
-$config['site']['recovery_account'] = false;
+$config['site']['recovery_account'] = true;
 $config['site']['mail_address'] = "account@midgard.com.br";
 $config['site']['smtp_enabled'] = true;
 
