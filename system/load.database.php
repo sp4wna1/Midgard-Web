@@ -10,6 +10,7 @@ define('SQL_ENCRYPTION', getenv('SERVERCONFIG_SQL_ENCRYPTION'));
 // endregion
 
 // region Server
+define('SERVER_IP', getenv('SERVERCONFIG_SERVER_IP'));
 define('SERVER_NAME', getenv('SERVERCONFIG_SERVER_NAME'));
 define('SERVER_PORT', getenv('SERVERCONFIG_SERVER_PORT'));
 // endregion
