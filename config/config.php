@@ -5,7 +5,6 @@ $towns_list = array(1 => 'Thais', 2 => 'Carlin', 3 => 'Kazordoon', 4 => "Ab'Dend
 # Account Maker Config
 $config['site']['serverPath'] = $_SERVER['DOCUMENT_ROOT'] . "/Midgard-Server/";
 $config['site']['useServerConfigCache'] = false;
-$config['site']['server_name'] = 'Midgard';
 
 $config['site']['outfit_images_url'] = 'http://outfit-images.ots.me/outfit.php';
 $config['site']['item_images_url'] = 'http://item-images.ots.me/960/';
