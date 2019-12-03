@@ -24,7 +24,7 @@ define('SERVER_SEND_EMAIL', getenv('SERVERCONFIG_SERVER_SEND_EMAIL_REGISTER'));
 // endregion
 
 // region heroku
-define('HEROKU_SENGRID_API', getenv('HEROKU_SENGRID_API'));
+define('HEROKU_SENGRID_API', getenv('SERVERCONFIG_HEROKU_API'));
 // endregion
 
 Website::setDatabaseDriver(Database::DB_MYSQL);
