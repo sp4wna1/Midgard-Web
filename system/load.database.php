@@ -1,9 +1,16 @@
 <?php
+
+// region SQL
 define('SQL_HOST', getenv('SERVERCONFIG_SQL_HOST'));
 define('SQL_PORT', getenv('SERVERCONFIG_SQL_PORT'));
 define('SQL_USER', getenv('SERVERCONFIG_SQL_USER'));
 define('SQL_PASS', getenv('SERVERCONFIG_SQL_PASS'));
 define('SQL_DATABASE', getenv('SERVERCONFIG_SQL_DATABASE'));
+// endregion
+
+// region Server
+define('SERVER_NAME', getenv('SERVERCONFIG_SERVER_NAME'));
+// endregion
 
 Website::setDatabaseDriver(Database::DB_MYSQL);
 Website::getDBHandle()->setDatabaseHost(SQL_HOST);
