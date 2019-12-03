@@ -6,7 +6,7 @@ $main_content .= '<tr bgcolor="' . $bgcolor . '"><td style="font-weight:bold;wid
 $bgcolor = (($number_of_rows++ % 2 == 1) ?  $config['site']['darkborder'] : $config['site']['lightborder']);
 $main_content .= '<tr bgcolor="' . $bgcolor . '"><td style="font-weight:bold;">Exp rate</td><td>';
 $stages = new DOMDocument();
-if($stages->load($config['site']['serverPath'] . 'data/XML/stages.xml') && $stages->getElementsByTagName('config')->item(0)->getAttribute('enabled'))
+if($stages->load($config['site']['serverPath'] . 'XML/stages.xml') && $stages->getElementsByTagName('config')->item(0)->getAttribute('enabled'))
 {
 	foreach($stages->getElementsByTagName('stage') as $stage)
 	{

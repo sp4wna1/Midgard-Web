@@ -161,7 +161,7 @@ class Website extends WebsiteErrors
 	public static function loadVocations()
 	{
 		$path = self::getWebsiteConfig()->getValue('serverPath');
-		self::$vocations = new Vocations($path . 'data/XML/vocations.xml');
+		self::$vocations = new Vocations($path . 'XML/vocations.xml');
 	}
 
 	public static function getVocations()
@@ -183,7 +183,7 @@ class Website extends WebsiteErrors
 	public static function loadGroups()
 	{
 		$path = self::getWebsiteConfig()->getValue('serverPath');
-		self::$groups = new Groups($path . 'data/XML/groups.xml');
+		self::$groups = new Groups($path . 'XML/groups.xml');
 	}
 
 	public static function getGroups()
