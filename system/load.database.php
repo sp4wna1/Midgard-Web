@@ -11,6 +11,7 @@ define('SQL_ENCRYPTION', getenv('SERVERCONFIG_SQL_ENCRYPTION'));
 
 // region Server
 define('SERVER_NAME', getenv('SERVERCONFIG_SERVER_NAME'));
+define('SERVER_PORT', getenv('SERVERCONFIG_SERVER_PORT'));
 // endregion
 
 Website::setDatabaseDriver(Database::DB_MYSQL);
