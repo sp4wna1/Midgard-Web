@@ -118,9 +118,9 @@ class Website extends WebsiteErrors
 
 	public static function updatePasswordEncryption()
 	{
-		$encryptionTypeLowerd = strtolower(self::getServerConfig()->getValue('encryptionType'));
+		$encryptionTypeLowerd = strtolower(SQL_ENCRYPTION);
 		if (empty($encryptionTypeLowerd)) { // TFS 1.1+
-			$encryptionTypeLowerd = $config['site']['encryptionType'];
+			$encryptionTypeLowerd = SQL_ENCRYPTION;
 			if (empty($encryptionTypeLowerd)) {
 				$encryptionTypeLowerd = 'sha1';
 			}

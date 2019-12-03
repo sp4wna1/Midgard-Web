@@ -27,11 +27,11 @@ else
 
     $layout_name = './layouts/' . Website::getWebsiteConfig()->getValue('layout');
 
-$title = ucwords($subtopic) . ' - ' . Website::getServerConfig()->getValue('serverName');
+$title = ucwords($subtopic) . ' - ' . SERVER_NAME;
 
 $topic = $subtopic;
 
-$passwordency = Website::getServerConfig()->getValue('encryptionType');
+$passwordency = SQL_ENCRYPTION;
 if (empty($passwordency)) {
     $passwordency = 'sha1';
 } else if ($passwordency == 'plain') {

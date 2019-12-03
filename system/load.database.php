@@ -6,6 +6,7 @@ define('SQL_PORT', getenv('SERVERCONFIG_SQL_PORT'));
 define('SQL_USER', getenv('SERVERCONFIG_SQL_USER'));
 define('SQL_PASS', getenv('SERVERCONFIG_SQL_PASS'));
 define('SQL_DATABASE', getenv('SERVERCONFIG_SQL_DATABASE'));
+define('SQL_ENCRYPTION', getenv('SERVERCONFIG_SQL_ENCRYPTION'));
 // endregion
 
 // region Server
