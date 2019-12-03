@@ -350,9 +350,7 @@ if ($action == "saveaccount") {
         {
             global $emailFrom, $emailTo, $numberTo, $passwordTo, $serverName, $serverUrl;
 
-            $sendgrid = new SendGrid("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");
-            $email = new \SendGrid\Mail\Mail();
-
+            $sendgrid = new SendGrid(HEROKU_SENGRID_API);
             $email = new SendGrid\Mail\Mail();
             $email->setFrom($emailFrom, "Midgard - New Account");
             $email->addTo($emailTo);
@@ -375,13 +373,15 @@ if ($action == "saveaccount") {
             $email->addContent("text/html", $mailBody);
 
             try {
-                $sendgrid->send($email);
+                if (SERVER_SEND_EMAIL) {
+                    $sendgrid->send($email);
+                }
 
             } catch (Exception $e) {
             }
         }
 
-        recoveryPassword();
+        sendEmail();
 
         $main_content .= '</TD></TR></TABLE></TD></TR></TABLE><BR><BR>';
     } else {

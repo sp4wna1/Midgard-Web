@@ -29,7 +29,7 @@ function recoveryPassword($emailTo, $accountNumber)
     $newPassword = mt_rand(9999, 99999999);
     $encrypted = Website::encryptPassword($newPassword);
 
-    $sendgrid = new SendGrid("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");
+    $sendgrid = new SendGrid(HEROKU_SENGRID_API);
     $email = new SendGrid\Mail\Mail();
 
     $email->setFrom($emailFrom, "Midgard - Recovery Account");

@@ -20,6 +20,11 @@ define('SERVER_RATE_EXP', getenv('SERVERCONFIG_SERVER_RATE_EXP'));
 define('SERVER_RATE_SKILL', getenv('SERVERCONFIG_SERVER_RATE_SKILL'));
 define('SERVER_RATE_LOOT', getenv('SERVERCONFIG_SERVER_RATE_LOOT'));
 define('SERVER_RATE_MAGIC', getenv('SERVERCONFIG_SERVER_RATE_MAGIC'));
+define('SERVER_SEND_EMAIL', getenv('SERVERCONFIG_SERVER_SEND_EMAIL_REGISTER'));
+// endregion
+
+// region heroku
+define('HEROKU_SENGRID_API', getenv('HEROKU_SENGRID_API'));
 // endregion
 
 Website::setDatabaseDriver(Database::DB_MYSQL);

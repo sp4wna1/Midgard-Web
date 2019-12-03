@@ -4,7 +4,6 @@ $towns_list = array(1 => 'Thais', 2 => 'Carlin', 3 => 'Kazordoon', 4 => "Ab'Dend
 
 # Account Maker Config
 $config['site']['serverPath'] = $_SERVER['DOCUMENT_ROOT'] . "/Midgard-Xml/";
-$config['site']['useServerConfigCache'] = false;
 
 $config['site']['outfit_images_url'] = 'http://outfit-images.ots.me/outfit.php';
 $config['site']['item_images_url'] = 'http://item-images.ots.me/960/';
@@ -18,7 +17,6 @@ $config['site']['create_account_verify_mail'] = false;
 $config['site']['verify_code'] = false;
 $config['site']['email_days_to_change'] = 3;
 $config['site']['newaccount_premdays'] = 30;
-$config['site']['send_register_email'] = true;
 $config['site']['select_flag'] = true;
 
 # Create Character Options
@@ -77,9 +75,6 @@ $config['site']['accounts_hidden'] = array(974294);
 
 # PAGE: shopsystem.php
 $config['site']['shop_system'] = false;
-
-# PAGE: lostpassword.php
-$config['site']['email_lai_sec_interval'] = 180;
 
 # PAGE: bountybug.php
 $config['site']['bounty_system'] = false;
