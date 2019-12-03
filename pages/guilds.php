@@ -27,7 +27,7 @@ if($action == 'login')
 //show list of guilds
 if($action == '')
 {
-	$world_name = $config['server']['serverName'];
+	$world_name = SERVER_NAME;
 	
 	$guilds_list = new DatabaseList('Guild');
 	$guilds_list->addOrder(new SQL_Order(new SQL_Field('name'), SQL_Order::ASC));
@@ -144,7 +144,7 @@ if($action == 'show')
 		<TR><TD WIDTH=64><IMG SRC="' . $guild->getGuildLogoLink() . '" WIDTH=64 HEIGHT=64></TD>
 		<TD ALIGN=center WIDTH=100%><H1>'.htmlspecialchars($guild->getName()).'</H1></TD>
 		<TD WIDTH=64><IMG SRC="' . $guild->getGuildLogoLink() . '" WIDTH=64 HEIGHT=64></TD></TR>
-		</TABLE><BR>'.$description.'<BR><BR><a href="?subtopic=characters&name='.urlencode($guild_owner).'"><b>'.htmlspecialchars($guild_owner).'</b></a> is guild leader of <b>'.htmlspecialchars($guild->getName()).'</b>.<BR>The guild was founded on '.htmlspecialchars($config['server']['serverName']).' on '.date("j F Y", $guild->getCreationData()).'.';
+		</TABLE><BR>'.$description.'<BR><BR><a href="?subtopic=characters&name='.urlencode($guild_owner).'"><b>'.htmlspecialchars($guild_owner).'</b></a> is guild leader of <b>'.htmlspecialchars($guild->getName()).'</b>.<BR>The guild was founded on '.htmlspecialchars(SERVER_NAME).' on '.date("j F Y", $guild->getCreationData()).'.';
 		if($guild_leader)
 			$main_content .= '&nbsp;&nbsp;&nbsp;<a href="?subtopic=guilds&action=manager&guild='.$guild_id.'"><IMG SRC="'.$layout_name.'/images/buttons/sbutton_manageguild.png" BORDER=0 WIDTH=120 HEIGHT=18 alt="Manage Guild"></a>';
 		$main_content .= '<BR><BR>
@@ -1034,13 +1034,13 @@ if($action == 'createguild')
 	}
 	else
 	{
-		$main_content .= 'To play on '.$config['server']['serverName'].' you need an account. 
+		$main_content .= 'To play on '.SERVER_NAME.' you need an account. 
 		All you have to do to create your new account is to enter your email address, password to new account, verification code from picture and to agree to the terms presented below. 
 		If you have done so, your account number, password and e-mail address will be shown on the following page and your account and password will be sent 
 		to your email address along with further instructions.<BR><BR>
 		<FORM ACTION="?subtopic=guilds&action=createguild&todo=save" METHOD=post>
 		<TABLE WIDTH=100% BORDER=0 CELLSPACING=1 CELLPADDING=4>
-		<TR><TD BGCOLOR="'.$config['site']['vdarkborder'].'" CLASS=white><B>Create an '.htmlspecialchars($config['server']['serverName']).' Account</B></TD></TR>
+		<TR><TD BGCOLOR="'.$config['site']['vdarkborder'].'" CLASS=white><B>Create an '.htmlspecialchars(SERVER_NAME).' Account</B></TD></TR>
 		<TR><TD BGCOLOR="'.$config['site']['darkborder'].'"><TABLE BORDER=0 CELLSPACING=8 CELLPADDING=0>
 		  <TR><TD>
 		    <TABLE BORDER=0 CELLSPACING=5 CELLPADDING=0>';

@@ -50,7 +50,7 @@ switch($list)
 		$list_name='Experience';
 		break;
 }
-$world_name = $config['server']['serverName'];
+$world_name = SERVER_NAME;
 
 $offset = $page * 100;
 $skills = new Highscores($id, 100, $page, $vocation);

@@ -226,7 +226,7 @@ function logo_monster()
 
 // STATUS CHECKER
 $statustimeout = 1;
-foreach (explode("*", str_replace(" ", "", $config['server']['statusTimeout'])) as $status_var)
+foreach (explode("*", str_replace(" ", "", SERVER_TIMEOUT)) as $status_var)
     if ($status_var > 0)
         $statustimeout = $statustimeout * $status_var;
 $statustimeout = $statustimeout / 1000;

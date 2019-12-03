@@ -55,21 +55,6 @@ class Website extends WebsiteErrors
 		return self::$websiteConfig;
 	}
 
-	public static function loadServerConfig()
-	{
-		self::$serverConfig = new ConfigPHP();
-		global $config;
-		self::$serverConfig->setConfig($config['server']);
-	}
-
-	public static function getServerConfig()
-	{
-		if(!isset(self::$serverConfig))
-			self::loadServerConfig();
-
-		return self::$serverConfig;
-	}
-
 	public static function getConfig($fileNameArray)
 	{
 		$fileName = implode('_', $fileNameArray);

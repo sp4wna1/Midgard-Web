@@ -1,7 +1,7 @@
 <?php
 
 	$main_content .= '
-		<div style="text-align: center; font-weight: bold;">Top 30 fraggers on ' . htmlspecialchars($config['server']['serverName']) . '</div>
+		<div style="text-align: center; font-weight: bold;">Top 30 fraggers on ' . htmlspecialchars(SERVER_NAME) . '</div>
 		<table border="0" cellspacing="1" cellpadding="4" width="100%">
 		<tr bgcolor="' . $config['site']['vdarkborder'] . '">
 			<td class="white" style="text-align: center; font-weight: bold;">Name</td>

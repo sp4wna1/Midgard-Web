@@ -30,12 +30,12 @@ if($config['site']['private-servlist.com_server_id'] > 0)
 if($number_of_players_online == 0)
 {
 	//server status - server empty
-	$main_content .= '<TABLE BORDER=0 CELLSPACING=1 CELLPADDING=4 WIDTH=100%><TR BGCOLOR="'.$config['site']['vdarkborder'].'"><TD CLASS=white><B>Server Status</B></TD></TR><TR BGCOLOR='.$config['site']['darkborder'].'><TD><TABLE BORDER=0 CELLSPACING=1 CELLPADDING=1><TR><TD>Currently no one is playing on <b>'.htmlspecialchars($config['server']['serverName']).'</b>.</TD></TR></TABLE></TD></TR></TABLE><BR>';
+	$main_content .= '<TABLE BORDER=0 CELLSPACING=1 CELLPADDING=4 WIDTH=100%><TR BGCOLOR="'.$config['site']['vdarkborder'].'"><TD CLASS=white><B>Server Status</B></TD></TR><TR BGCOLOR='.$config['site']['darkborder'].'><TD><TABLE BORDER=0 CELLSPACING=1 CELLPADDING=1><TR><TD>Currently no one is playing on <b>'.htmlspecialchars(SERVER_NAME).'</b>.</TD></TR></TABLE></TD></TR></TABLE><BR>';
 }
 else
 {
 	//server status - someone is online
-	$main_content .= '<TABLE BORDER=0 CELLSPACING=1 CELLPADDING=4 WIDTH=100%><TR BGCOLOR="'.$config['site']['vdarkborder'].'"><TD CLASS=white><B>Server Status</B></TD></TR><TR BGCOLOR='.$config['site']['darkborder'].'><TD><TABLE BORDER=0 CELLSPACING=1 CELLPADDING=1><TR><TD>Currently '.$number_of_players_online.' players are online - <b>'.$config['status']['serverStatus_players'] .' ' . (($config['status']['serverStatus_players']  > 1) ? 'are' : 'is') . ' active</b> and <b>'.($number_of_players_online-$config['status']['serverStatus_players']).' ' . (($number_of_players_online-$config['status']['serverStatus_players']  > 1) ? 'are' : 'is') . ' AFK</b> on <b>'.htmlspecialchars($config['server']['serverName']).'</b>.</TD></TR></TABLE></TD></TR></TABLE><BR>';
+	$main_content .= '<TABLE BORDER=0 CELLSPACING=1 CELLPADDING=4 WIDTH=100%><TR BGCOLOR="'.$config['site']['vdarkborder'].'"><TD CLASS=white><B>Server Status</B></TD></TR><TR BGCOLOR='.$config['site']['darkborder'].'><TD><TABLE BORDER=0 CELLSPACING=1 CELLPADDING=1><TR><TD>Currently '.$number_of_players_online.' players are online - <b>'.$config['status']['serverStatus_players'] .' ' . (($config['status']['serverStatus_players']  > 1) ? 'are' : 'is') . ' active</b> and <b>'.($number_of_players_online-$config['status']['serverStatus_players']).' ' . (($number_of_players_online-$config['status']['serverStatus_players']  > 1) ? 'are' : 'is') . ' AFK</b> on <b>'.htmlspecialchars(SERVER_NAME).'</b>.</TD></TR></TABLE></TD></TR></TABLE><BR>';
 
 
 	$main_content .= '<table width="200" cellspacing="1" cellpadding="0" border="0" align="center">

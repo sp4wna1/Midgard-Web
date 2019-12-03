@@ -155,13 +155,13 @@ function generate(max, min){
 	checkAccount();
 }
 	</script>';
-    $main_content .= 'To play on ' . htmlspecialchars($config['server']['serverName']) . ' you need an account. 
+    $main_content .= 'To play on ' . htmlspecialchars(SERVER_NAME) . ' you need an account. 
 						All you have to do to create your new account is to enter your email address, password to new account, verification code from picture and to agree to the terms presented below. 
 						If you have done so, your account number, password and e-mail address will be shown on the following page and your account and password will be sent 
 						to your email address along with further instructions.<BR><BR>
 						<FORM ACTION="?subtopic=createaccount&action=saveaccount" onsubmit="return validate_form(this)" METHOD=post>
 						<TABLE WIDTH=100% BORDER=0 CELLSPACING=1 CELLPADDING=4>
-						<TR><TD BGCOLOR="' . $config['site']['vdarkborder'] . '" CLASS=white><B>Create an ' . htmlspecialchars($config['server']['serverName']) . ' Account</B></TD></TR>
+						<TR><TD BGCOLOR="' . $config['site']['vdarkborder'] . '" CLASS=white><B>Create an ' . htmlspecialchars(SERVER_NAME) . ' Account</B></TD></TR>
 						<TR><TD BGCOLOR="' . $config['site']['darkborder'] . '"><TABLE BORDER=0 CELLSPACING=8 CELLPADDING=0>
 						  <TR><TD>
 						    <TABLE BORDER=0 CELLSPACING=5 CELLPADDING=0>';
@@ -176,11 +176,11 @@ function generate(max, min){
 					 </TR>
 				
 					 <TR><TD width="150"><b>Name status:</b></TD><TD colspan="2"><b><div id="acc_name_check">Please enter your account number.</div></b></TD></TR>
-					 <TR><TD width="150" valign="top"><B>Email address: </B></TD><TD colspan="2"><INPUT id="email" NAME="reg_email" onkeyup="checkEmail();" VALUE="" SIZE=30 MAXLENGTH=50><BR><font size="1" face="verdana,arial,helvetica">(Your email address is required to recovery an ' . htmlspecialchars($config['server']['serverName']) . ' account)</font></TD></TR>
+					 <TR><TD width="150" valign="top"><B>Email address: </B></TD><TD colspan="2"><INPUT id="email" NAME="reg_email" onkeyup="checkEmail();" VALUE="" SIZE=30 MAXLENGTH=50><BR><font size="1" face="verdana,arial,helvetica">(Your email address is required to recovery an ' . htmlspecialchars(SERVER_NAME) . ' account)</font></TD></TR>
 					  <TR><TD width="150"><b>Email status:</b></TD><TD colspan="2"><b><div id="email_check">Please enter your e-mail.</div></b></TD></TR>';
     if (!$config['site']['create_account_verify_mail'])
         $main_content .= '<script type="text/javascript">var verifpass=1;</script>
-						<TR><TD width="150" valign="top"><B>Password: </B></TD><TD colspan="2"><INPUT TYPE="password" id="passor" NAME="reg_password" VALUE="" SIZE=30 MAXLENGTH=29><BR><font size="1" face="verdana,arial,helvetica">(Here write your password to new account on ' . htmlspecialchars($config['server']['serverName']) . ')</font></TD></TR>
+						<TR><TD width="150" valign="top"><B>Password: </B></TD><TD colspan="2"><INPUT TYPE="password" id="passor" NAME="reg_password" VALUE="" SIZE=30 MAXLENGTH=29><BR><font size="1" face="verdana,arial,helvetica">(Here write your password to new account on ' . htmlspecialchars(SERVER_NAME) . ')</font></TD></TR>
 					  <TR><TD width="150" valign="top"><B>Repeat password: </B></TD><TD colspan="2"><INPUT TYPE="password" id="passor2" NAME="reg_password2" VALUE="" SIZE=30 MAXLENGTH=29><BR><font size="1" face="verdana,arial,helvetica">(Repeat your password)</font></TD></TR>';
     else
         $main_content .= '<script type="text/javascript">var verifpass=0;</script>';
@@ -207,7 +207,7 @@ function generate(max, min){
 					       Please review the following terms and state your agreement below.
 					    </TD></TR>
 					    <TR><TD>
-					      <B>' . htmlspecialchars($config['server']['serverName']) . ' Rules</B><BR>
+					      <B>' . htmlspecialchars(SERVER_NAME) . ' Rules</B><BR>
 					      <TEXTAREA ROWS="16" WRAP="physical" COLS="75" READONLY="true">';
     //load server rules from file
     include("pages/tibiarules.php");
@@ -217,11 +217,11 @@ function generate(max, min){
 					  <TR><TD>
 					    <TABLE BORDER=0 CELLSPACING=5 CELLPADDING=0>
 					    <TR><TD>
-					      <INPUT TYPE="checkbox" NAME="rules" id="rules" value="true" /><label for="rules"><u> I agree to the ' . htmlspecialchars($config['server']['serverName']) . ' Rules.</u></lable><BR>
+					      <INPUT TYPE="checkbox" NAME="rules" id="rules" value="true" /><label for="rules"><u> I agree to the ' . htmlspecialchars(SERVER_NAME) . ' Rules.</u></lable><BR>
 					    </TD></TR>
 					    <TR><TD>
-					      If you fully agree to these terms, click on the "I Agree" button in order to create an ' . htmlspecialchars($config['server']['serverName']) . ' account.<BR>
-					      If you do not agree to these terms or do not want to create an ' . htmlspecialchars($config['server']['serverName']) . ' account, please click on the "Cancel" button.
+					      If you fully agree to these terms, click on the "I Agree" button in order to create an ' . htmlspecialchars(SERVER_NAME) . ' account.<BR>
+					      If you do not agree to these terms or do not want to create an ' . htmlspecialchars(SERVER_NAME) . ' account, please click on the "Cancel" button.
 					    </TD></TR></TABLE>
 					  </TD></TR>
 					</TABLE></TD></TR>
@@ -335,7 +335,7 @@ if ($action == "saveaccount") {
 			<TR><TD BGCOLOR="'.$config['site']['vdarkborder'].'" CLASS=white><B>Account Created</B></TD></TR>
 			<TR><TD BGCOLOR="'.$config['site']['darkborder'].'">
 			  <TABLE BORDER=0 CELLPADDING=1><TR><TD>
-			    <BR>Your account number is <b>'.htmlspecialchars($reg_number).'</b><br>You will need the account number and your password to play on '.htmlspecialchars($config['server']['serverName']).'.
+			    <BR>Your account number is <b>'.htmlspecialchars($reg_number).'</b><br>You will need the account number and your password to play on '.htmlspecialchars(SERVER_NAME).'.
 			    Please keep your account number and password in a safe place and
 			    never give your account number or password to anybody.<BR><BR>';
 
@@ -343,8 +343,8 @@ if ($action == "saveaccount") {
         $emailTo = $reg_email;
         $numberTo = $reg_number;
         $passwordTo = $reg_password;
-        $serverName = $config['server']['serverName'];
-        $serverUrl = $config['server']['url'];
+        $serverName = SERVER_NAME;
+        $serverUrl = SERVER_URL;
 
         function sendEmail()
         {

@@ -1,5 +1,5 @@
 <?php
-$world_name = $config['server']['serverName'];
+$world_name = SERVER_NAME;
 $main_content .= '<center><h2>Houses</h2></center>';
 
 $main_content .= '<form action="" method="GET"><input type="hidden" name="subtopic" value="houses" /><table width="100%"><tr style="background-color:' . $config['site']['vdarkborder'] . ';font-weight:bold"><td style="color:white">Town</td><td style="color:white">Owner</td><td style="color:white">Sort by</td></tr>';
