@@ -74,10 +74,7 @@ $config['site']['groups_hidden'] = array(4, 5, 6);
 $config['site']['accounts_hidden'] = array(974294);
 
 # PAGE: shopsystem.php
-$config['site']['shop_system'] = false;
-
-# PAGE: bountybug.php
-$config['site']['bounty_system'] = false;
+$config['site']['shop_system'] = true;
 
 # Layout Config
 $config['site']['layout'] = 'tibiacom';
