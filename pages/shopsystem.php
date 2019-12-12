@@ -31,8 +31,9 @@ $headerColor = $config['site']['darkborder'];
 echo "<table  BORDER=0 CELLPADDING=4 CELLSPACING=1 WIDTH=100%>
 	  	<tbody>
         	<tr bgcolor='$headerColor'>
+				<th WIDTH=15%>Image</th>
 				<th WIDTH=35%>Name</th>
-				<th WIDTH=40%>Description</th>
+				<th WIDTH=30%>Description</th>
 				<th WIDTH=15%><center>Points</center></th>
 				<th WIDTH=5%><center>Selected</center></th>
 			</tr>";
@@ -45,6 +46,7 @@ foreach ($records as $i => $record) {
 
     echo "    
 		 <tr bgcolor='$rowColor'>
+		 	<td><center><img src=$record[3]></center></td>
 			<td>$record[1]</td>
 			<td>$record[2]</td>
 			<td><center>$record[4]</center></td>
