@@ -340,11 +340,11 @@ echo "<div id='shops' class='menuitem'>
 </span>
 </div>
 <div id='shops_Submenu' class='Submenu'> 
-<a href='?subtopic=buypoints'>
-  <div id='submenu_buypoints' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+<a href='?subtopic=donate'>
+  <div id='submenu_donate' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
     <div class='LeftChain' style='background-image:url(".$layout_name."/images/general/chain.gif);'></div>
-    <div id='ActiveSubmenuItemIcon_buypoints' class='ActiveSubmenuItemIcon' style='background-image:url(".$layout_name."/images/menu/icon-activesubmenu.gif);'></div>
-    <div class='SubmenuitemLabel'><div style=\"color: yellow;\">Buy Points</div></div>
+    <div id='ActiveSubmenuItemIcon_donate' class='ActiveSubmenuItemIcon' style='background-image:url(".$layout_name."/images/menu/icon-activesubmenu.gif);'></div>
+    <div class='SubmenuitemLabel'><div style=\"color: yellow;\">Donate</div></div>
     <div class='RightChain' style='background-image:url(".$layout_name."/images/general/chain.gif);'></div>
   </div>
 </a>
@@ -352,12 +352,12 @@ echo "<div id='shops' class='menuitem'>
   <div id='submenu_shopsystem' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
     <div class='LeftChain' style='background-image:url(".$layout_name."/images/general/chain.gif);'></div>
     <div id='ActiveSubmenuItemIcon_shopsystem' class='ActiveSubmenuItemIcon' style='background-image:url(".$layout_name."/images/menu/icon-activesubmenu.gif);'></div>
-    <div class='SubmenuitemLabel'><div style=\"color: green;\">Shop Offer</div></div>
+    <div class='SubmenuitemLabel'><div style=\"color: green;\">Shop</div></div>
     <div class='RightChain' style='background-image:url(".$layout_name."/images/general/chain.gif);'></div>
   </div>
 </a>";
 if($logged)
-echo "<a href='?subtopic=shopsystem&action=show_history'>
+echo "<a href='?subtopic=shop&action=show_history'>
   <div id='submenu_show_history' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
     <div class='LeftChain' style='background-image:url(".$layout_name."/images/general/chain.gif);'></div>
     <div id='ActiveSubmenuItemIcon_show_history' class='ActiveSubmenuItemIcon' style='background-image:url(".$layout_name."/images/menu/icon-activesubmenu.gif);'></div>
