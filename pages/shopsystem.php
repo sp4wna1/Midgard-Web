@@ -31,14 +31,13 @@ $headerColor = $config['site']['darkborder'];
 echo "<table  BORDER=0 CELLPADDING=4 CELLSPACING=1 WIDTH=100%>
 	  	<tbody>
         	<tr bgcolor='$headerColor'>
-				<th WIDTH=15%><center>Image</center></th>
-				<th WIDTH=25%>Name</th>
+				<th WIDTH=35%>Name</th>
 				<th WIDTH=40%>Description</th>
-				<th WIDTH=10%><center>Points</center></th>
+				<th WIDTH=15%><center>Points</center></th>
 				<th WIDTH=5%><center>Selected</center></th>
 			</tr>";
 
-$records = $SQL->query('SELECT * FROM ' . $SQL->tableName('bounty'))->fetchAll();
+$records = $SQL->query('SELECT * FROM ' . $SQL->tableName('donation_items'))->fetchAll();
 
 foreach ($records as $i => $record) {
 
@@ -46,28 +45,16 @@ foreach ($records as $i => $record) {
 
     echo "    
 		 <tr bgcolor='$rowColor'>
-	     	<td><center> <img id='image' src=$layout_name$record[4]> </center></td>
 			<td>$record[1]</td>
 			<td>$record[2]</td>
-			<td><center>$record[3]</center></td>
-			<td><center><input type='checkbox' id='checkbox-bounty$i' name='checkbox-bounty$i' onclick='onCheck($record[3], $i)' /> </center></td>
+			<td><center>$record[4]</center></td>
+			<td><center><input type='submit' id='submit$i' name='submit$i' /> </center></td>
 		 </tr>";
 }
 
 echo "</tbody>
-	</table>";
+	</table><br>";
 
-echo "<center>
-    <div>
-        <h3>Selected points:</h3>   <input type='text' id='selected-counter' name='selected-counter' value='0' disabled/>
-    </div>";
-
-if ($logged) {
-    echo "<input type=image id=submit name=submit alt=Submit src=$layout_name/images/buttons/sbutton_submit.gif border=0
-           width=120 height=18>";
-}
-
-echo "</center>";
 echo "<script>
 
         $(submit).on( 'click', function( event ) {
