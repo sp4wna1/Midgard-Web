@@ -85,4 +85,4 @@ $config['site']['serverinfo_page'] = true;
 
 # PAGE: downloads.php
 $config['site']['download_page'] = true;
-$config['site']['client'] = "https://mega.nz/#!1W4hDQ5S!2MDbm7iBYLUU335QqMvgxUFt5mOludb6BBBReS1lO1E";
+$config['site']['client'] = "https://midgard-files.s3-sa-east-1.amazonaws.com/Midgard-Client.rar";
