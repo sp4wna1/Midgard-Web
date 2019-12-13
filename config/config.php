@@ -16,7 +16,7 @@ $config['site']['one_email'] = true;
 $config['site']['create_account_verify_mail'] = false;
 $config['site']['verify_code'] = false;
 $config['site']['email_days_to_change'] = 3;
-$config['site']['newaccount_premdays'] = 30;
+$config['site']['newaccount_premdays'] = 0;
 $config['site']['select_flag'] = true;
 
 # Create Character Options
