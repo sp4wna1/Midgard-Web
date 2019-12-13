@@ -30,9 +30,11 @@ echo "<table  BORDER=0 CELLPADDING=4 CELLSPACING=1 WIDTH=100%>
 				<th WIDTH=15%>Image</th>
 				<th WIDTH=35%>Name</th>
 				<th WIDTH=30%>Description</th>
-				<th WIDTH=15%><center>Points</center></th>
-				<th WIDTH=5%><center>Selected</center></th>
-			</tr>";
+				<th WIDTH=15%><center>Points</center></th>";
+if ($logged) {
+    echo "<th WIDTH=5%><center>Selected</center></th>";
+}
+echo "</tr>";
 
 $records = $SQL->query('SELECT * FROM ' . $SQL->tableName('donation_items'))->fetchAll();
 
@@ -45,9 +47,13 @@ foreach ($records as $i => $record) {
 		 	<td><center><img src=$record[3]></center></td>
 			<td>$record[1]</td>
 			<td>$record[2]</td>
-			<td><center>$record[4]</center></td>
-			<td><center><input type='submit' id='submit$i' name='submit$i' /> </center></td>
-		 </tr>";
+			<td><center>$record[4]</center></td>";
+
+    if ($logged) {
+        echo "<td><center><input type='submit' id='submit$i' name='submit$i' /> </center></td>";
+    }
+
+    echo "</tr>";
 }
 
 echo "</tbody>
