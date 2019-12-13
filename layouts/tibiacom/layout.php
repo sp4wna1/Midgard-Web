@@ -356,24 +356,6 @@ echo "<div id='shops' class='menuitem'>
     <div class='RightChain' style='background-image:url(".$layout_name."/images/general/chain.gif);'></div>
   </div>
 </a>";
-if($logged)
-echo "<a href='?subtopic=shop&action=show_history'>
-  <div id='submenu_show_history' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
-    <div class='LeftChain' style='background-image:url(".$layout_name."/images/general/chain.gif);'></div>
-    <div id='ActiveSubmenuItemIcon_show_history' class='ActiveSubmenuItemIcon' style='background-image:url(".$layout_name."/images/menu/icon-activesubmenu.gif);'></div>
-    <div class='SubmenuitemLabel'>Trans. History</div>
-    <div class='RightChain' style='background-image:url(".$layout_name."/images/general/chain.gif);'></div>
-  </div>
-</a>";
-if($group_id_of_acc_logged >= $config['site']['access_admin_panel'])
-echo "<a href='?subtopic=shopadmin'>
-  <div id='submenu_shopadmin' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
-    <div class='LeftChain' style='background-image:url(".$layout_name."/images/general/chain.gif);'></div>
-    <div id='ActiveSubmenuItemIcon_shopadmin' class='ActiveSubmenuItemIcon' style='background-image:url(".$layout_name."/images/menu/icon-activesubmenu.gif);'></div>
-    <div class='SubmenuitemLabel'><font color=red>! Shop Admin !</font></div>
-    <div class='RightChain' style='background-image:url(".$layout_name."/images/general/chain.gif);'></div>
-  </div>
-</a>";
 echo "</div>";
 }
 ?>
