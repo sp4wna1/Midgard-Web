@@ -170,6 +170,16 @@ class Account extends ObjectData
         return $lastExpires;
     }
 
+    public function isOnline($playerId)
+    {
+        $result = $this->getDatabaseHandler()->query('SELECT player_id FROM players_online WHERE player_id = ' . $playerId . ';')->fetch();
+        if($result[0] == null) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
     public function delete()
     {
         $this->getDatabaseHandler()->query('DELETE FROM ' . $this->getDatabaseHandler()->tableName(self::$table) . ' WHERE ' . $this->getDatabaseHandler()->fieldName('id') . ' = ' . $this->getDatabaseHandler()->quote($this->data['id']));
@@ -274,6 +284,19 @@ class Account extends ObjectData
     public function getPoints()
     {
         return $this->data['points'];
+    }
+
+    public function setPoints($pointsToRemove)
+    {
+        $value = $this->data['points'] - $pointsToRemove;
+        $this->data['points'] = $value;
+
+        $this->update('points', $value, ('id = ' . $this->data['id']));
+    }
+
+    private function update($field, $value, $condition)
+    {
+        $this->getDatabaseHandler()->query('UPDATE ' . $this->getDatabaseHandler()->tableName('accounts') . ' SET ' . $field . ' = ' . $value . ' WHERE ' . $condition . ';');
     }
 
     /*
