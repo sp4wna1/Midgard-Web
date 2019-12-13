@@ -1,5 +1,32 @@
 <?php
-if (!$config['site']['shop_system']) return;
+if (!$config['site']['shop_system']) {
+    return;
+} else {
+
+    $records = $SQL->query('SELECT * FROM ' . $SQL->tableName('donation_items'))->fetchAll();
+
+    if ($logged) {
+        $account_logged = Visitor::getAccount();
+        $points = $account_logged->getPoints();
+    } else {
+        $points = 0;
+    }
+
+    //FIXME
+    $playerId = 5;
+    $pid = 10;
+
+    if (isset($_POST['submit0'])) {
+        Premium::tryToPurchase($records[0], $playerId, $points, $account_logged, $SQL, $pid);
+        $points = $account_logged->getPoints();
+    } else if (isset($_POST['submit1'])) {
+        Premium::tryToPurchase($records[1], $playerId, $points, $account_logged, $SQL, $pid);
+        $points = $account_logged->getPoints();
+    } else if (isset($_POST['submit2'])) {
+        Premium::tryToPurchase($records[2], $playerId, $points, $account_logged, $SQL, $pid);
+        $points = $account_logged->getPoints();
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -9,8 +36,6 @@ if (!$config['site']['shop_system']) return;
         <h2>Shop</h2>
         <?php
         if ($logged) {
-            $account_logged = Visitor::getAccount();
-            $points = $account_logged->getPoints();
             echo "<h4> You have <b>$points</b> points left. </h4>";
         } else {
             echo "You have to be <b><a href='?subtopic=accountmanagement'>logged</a></b> to use this system.";
@@ -23,7 +48,7 @@ if (!$config['site']['shop_system']) return;
 
 <?php
 $headerColor = $config['site']['darkborder'];
-
+echo "<form method='post'>";
 echo "<table  BORDER=0 CELLPADDING=4 CELLSPACING=1 WIDTH=100%>
 	  	<tbody>
         	<tr bgcolor='$headerColor'>
@@ -35,8 +60,6 @@ if ($logged) {
     echo "<th WIDTH=5%><center>Selected</center></th>";
 }
 echo "</tr>";
-
-$records = $SQL->query('SELECT * FROM ' . $SQL->tableName('donation_items'))->fetchAll();
 
 foreach ($records as $i => $record) {
 
@@ -57,7 +80,8 @@ foreach ($records as $i => $record) {
 }
 
 echo "</tbody>
-	</table><br>";
+	</table><br>
+	</form>";
 ?>
 
 
