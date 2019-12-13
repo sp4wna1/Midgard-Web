@@ -2,10 +2,6 @@
 if (!$config['site']['shop_system']) return;
 ?>
 
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-<link href="<?PHP echo $layout_name; ?>/bugbounty/bugbounty.css" rel="stylesheet" type="text/css">
-
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -56,23 +52,6 @@ foreach ($records as $i => $record) {
 
 echo "</tbody>
 	</table><br>";
-
-echo "<script>
-
-        $(submit).on( 'click', function( event ) {
-            let counter = $('#selected-counter').val();
-            
-            if (counter == 0) {
-                alert('You have to select an item.');
-            } else if (counter > $points) {
-                alert('You don`t have enough points.');    
-            } else {
-                alert('Nice');
-              
-            }
-        });
-        
-    </script>";
 ?>
 
 
