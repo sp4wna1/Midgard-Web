@@ -5,8 +5,8 @@ class Account extends ObjectData
     const LOADTYPE_ID = 'id';
     const LOADTYPE_NAME = 'name';
     public static $table = 'accounts';
-    public $data = array('id' => null, 'password' => null, 'email' => null, 'type' => null, 'premdays' => null, 'lastday' => null, 'create_date' => null, 'last_post' => null, 'flag' => null, 'key' => null);
-    public static $fields = array('id', 'password', 'email', 'type', 'premdays', 'lastday', 'create_date', 'last_post', 'flag', 'key');
+    public $data = array('id' => null, 'password' => null, 'email' => null, 'type' => null, 'premdays' => null, 'lastday' => null, 'create_date' => null, 'last_post' => null, 'flag' => null, 'key' => null, 'points' => null);
+    public static $fields = array('id', 'password', 'email', 'type', 'premdays', 'lastday', 'create_date', 'last_post', 'flag', 'key', 'points');
     public $players;
     public $bans;
 
@@ -269,6 +269,11 @@ class Account extends ObjectData
     public function getFlag()
     {
         return $this->data['flag'];
+    }
+
+    public function getPoints()
+    {
+        return $this->data['points'];
     }
 
     /*
