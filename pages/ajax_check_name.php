@@ -10,18 +10,18 @@ if(empty($name))
 //first word can't be:
 $first_words_blocked = array('gm ','cm ', 'god ','tutor ', "'", '-');
 //names blocked:
-$names_blocked = array('gm','cm', 'god', 'tutor');
+$names_blocked = array('gm','cm', 'god', 'tutor', 'adm');
 //name can't contain:
 $words_blocked = array('gamemaster', 'game master', 'game-master', "game'master", '  ', '--', "''","' ", " '", '- ', ' -', "-'", "'-", 'fuck', 'sux', 'suck', 'noob', 'tutor');
-$temp = strspn("$name", "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM- '");
+$temp = strspn("$name", "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM ");
 if($temp != strlen($name))
 {
-	echo '<font color="red">Name contains illegal letters. Use only: <b>qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM- \'</b></font>';
+	echo '<font color="red">Name contains illegal letters. Use only: <b>qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM</b></font>';
 	exit;
 }
-if(strlen($name) > 25)
+if(strlen($name) > 15)
 {
-	echo '<font color="red">Too long name. Max. lenght <b>25</b> letters.</font>';
+	echo '<font color="red">Too long name. Max. lenght <b>15</b> letters.</font>';
 	exit;
 }
 foreach($names_blocked as $word)
