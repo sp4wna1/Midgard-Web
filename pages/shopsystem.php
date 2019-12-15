@@ -8,21 +8,23 @@ if (!$config['site']['shop_system']) {
     if ($logged) {
         $account_logged = Visitor::getAccount();
         $points = $account_logged->getPoints();
+        $account_players = $account_logged->getPlayers();
     } else {
         $points = 0;
     }
 
-    //FIXME
-    $playerId = 5;
     $pid = 10;
 
     if (isset($_POST['submit0'])) {
+        $playerId = $account_players->getResult($_POST['select'])->getId();
         Premium::tryToPurchase($records[0], $playerId, $points, $account_logged, $SQL, $pid);
         $points = $account_logged->getPoints();
     } else if (isset($_POST['submit1'])) {
+        $playerId = $account_players->getResult($_POST['select'])->getId();
         Premium::tryToPurchase($records[1], $playerId, $points, $account_logged, $SQL, $pid);
         $points = $account_logged->getPoints();
     } else if (isset($_POST['submit2'])) {
+        $playerId = $account_players->getResult($_POST['select'])->getId();
         Premium::tryToPurchase($records[2], $playerId, $points, $account_logged, $SQL, $pid);
         $points = $account_logged->getPoints();
     }
@@ -35,8 +37,23 @@ if (!$config['site']['shop_system']) {
     <center>
         <h2>Shop</h2>
         <?php
+        echo "<form method='post'>";
+
         if ($logged) {
             echo "<h4> You have <b>$points</b> points left. </h4>";
+
+            echo "<div>
+                  <label>Player:</label>
+                  <select name='select'>";
+
+
+            for ($i = 0; $i < $account_players->count(); $i++) {
+                echo "<option value = $i>" . $account_players->getResult($i)->getName() . "</option>";
+            }
+
+            echo "</select>
+                  </div>";
+
         } else {
             echo "You have to be <b><a href='?subtopic=accountmanagement'>logged</a></b> to use this system.";
         }
@@ -48,7 +65,6 @@ if (!$config['site']['shop_system']) {
 
 <?php
 $headerColor = $config['site']['darkborder'];
-echo "<form method='post'>";
 echo "<table  BORDER=0 CELLPADDING=4 CELLSPACING=1 WIDTH=100%>
 	  	<tbody>
         	<tr bgcolor='$headerColor'>
