@@ -28,6 +28,6 @@ include_once('./system/load.layout.php');
 
 
 // TRUE = Queries on HTML
-define('DEBUG_DATABASE', true);
+define('DEBUG_DATABASE', false);
 
 if (DEBUG_DATABASE) Website::getDBHandle()->setPrintQueries(true);
