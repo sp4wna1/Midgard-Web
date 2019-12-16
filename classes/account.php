@@ -26,7 +26,6 @@ class Account extends ObjectData
             $values[] = $this->getDatabaseHandler()->quote($this->data[$key]);
         }
 
-        echo 'INSERT INTO ' . $this->getDatabaseHandler()->tableName('accounts') . ' (' . implode(', ', $keys) . ') VALUES (' . implode(', ', $values) . ')';
         $this->getDatabaseHandler()->query('INSERT INTO ' . $this->getDatabaseHandler()->tableName('accounts') . ' (' . implode(', ', $keys) . ') VALUES (' . implode(', ', $values) . ')');
     }
 
