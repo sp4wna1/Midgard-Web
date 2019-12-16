@@ -318,6 +318,7 @@ if ($action == "saveaccount") {
         $reg_account->setLastDay(time());
         $reg_account->setCreateDate(time());
         $reg_account->setLastPost(time());
+        $reg_account->setPoints(0);
         if ($config['site']['select_flag']) {
             $reg_account->setFlag($reg_country);
         } else {

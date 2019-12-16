@@ -28,7 +28,7 @@ class Premium extends ObjectData
         $values = array($player_id, $pid, ++$nextSid[0], $item, $count, $attr);
 
         $SQL->query('INSERT INTO ' . $SQL->tableName('player_items') . ' (' . implode(', ', $keys) . ') VALUES (' . implode(', ', $values) . ')');
-        $account->setPoints($points);
+        $account->updatePoints($points);
     }
 
 }

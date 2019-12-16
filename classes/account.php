@@ -26,6 +26,7 @@ class Account extends ObjectData
             $values[] = $this->getDatabaseHandler()->quote($this->data[$key]);
         }
 
+        echo 'INSERT INTO ' . $this->getDatabaseHandler()->tableName('accounts') . ' (' . implode(', ', $keys) . ') VALUES (' . implode(', ', $values) . ')';
         $this->getDatabaseHandler()->query('INSERT INTO ' . $this->getDatabaseHandler()->tableName('accounts') . ' (' . implode(', ', $keys) . ') VALUES (' . implode(', ', $values) . ')');
     }
 
@@ -173,7 +174,7 @@ class Account extends ObjectData
     public function isOnline($playerId)
     {
         $result = $this->getDatabaseHandler()->query('SELECT player_id FROM players_online WHERE player_id = ' . $playerId . ';')->fetch();
-        if($result[0] == null) {
+        if ($result[0] == null) {
             return false;
         } else {
             return true;
@@ -286,7 +287,12 @@ class Account extends ObjectData
         return $this->data['points'];
     }
 
-    public function setPoints($pointsToRemove)
+    public function setPoints($value)
+    {
+        $this->data['points'] = $value;
+    }
+
+    public function updatePoints($pointsToRemove)
     {
         $value = $this->data['points'] - $pointsToRemove;
         $this->data['points'] = $value;
