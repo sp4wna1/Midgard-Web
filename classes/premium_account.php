@@ -1,6 +1,6 @@
 <?php
 
-class Premium extends ObjectData
+class Premium_Account extends ObjectData
 {
     private static function isSlotNotEmpty($SQL, $playerId, $pid)
     {
@@ -10,14 +10,14 @@ class Premium extends ObjectData
     static function tryToPurchase($selectedItem, $playerId, $points, $account, $SQL, $pid)
     {
         if ($points < $selectedItem[4]) {
-            Alert::showMessage("You dont have enough points.");
+            Message_Alert::showMessage("You dont have enough points.");
         } else if ($account->isOnline($playerId)) {
-            Alert::showMessage("You have to logout your selected character.");
-        } else if (Premium::isSlotNotEmpty($SQL, $playerId, $pid)) {
-            Alert::showMessage("You have to remove the item in your Arrow slot.");
+            Message_Alert::showMessage("You have to logout your selected character.");
+        } else if (Premium_Account::isSlotNotEmpty($SQL, $playerId, $pid)) {
+            Message_Alert::showMessage("You have to remove the item in your Arrow slot.");
         } else {
-            Premium::purchase($SQL, $playerId, $pid, $selectedItem[0], 1, 0, $selectedItem[4], $account);
-            Alert::showMessage('Congratulations, now you can log into your character and use your item.');
+            Premium_Account::purchase($SQL, $playerId, $pid, $selectedItem[0], 1, 0, $selectedItem[4], $account);
+            Message_Alert::showMessage('Congratulations, now you can log into your character and use your item.');
         }
     }
 

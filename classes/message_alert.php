@@ -1,7 +1,7 @@
 <?php
 
 
-class Alert
+class Message_Alert
 {
     static function showMessage($message)
     {

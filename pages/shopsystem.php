@@ -17,15 +17,15 @@ if (!$config['site']['shop_system']) {
 
     if (isset($_POST['submit0'])) {
         $playerId = $account_players->getResult($_POST['select'])->getId();
-        Premium::tryToPurchase($records[0], $playerId, $points, $account_logged, $SQL, $pid);
+        Premium_Account::tryToPurchase($records[0], $playerId, $points, $account_logged, $SQL, $pid);
         $points = $account_logged->getPoints();
     } else if (isset($_POST['submit1'])) {
         $playerId = $account_players->getResult($_POST['select'])->getId();
-        Premium::tryToPurchase($records[1], $playerId, $points, $account_logged, $SQL, $pid);
+        Premium_Account::tryToPurchase($records[1], $playerId, $points, $account_logged, $SQL, $pid);
         $points = $account_logged->getPoints();
     } else if (isset($_POST['submit2'])) {
         $playerId = $account_players->getResult($_POST['select'])->getId();
-        Premium::tryToPurchase($records[2], $playerId, $points, $account_logged, $SQL, $pid);
+        Premium_Account::tryToPurchase($records[2], $playerId, $points, $account_logged, $SQL, $pid);
         $points = $account_logged->getPoints();
     }
 }

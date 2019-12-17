@@ -58,7 +58,7 @@ function recoveryPassword($emailTo, $accountNumber)
 
         $sendgrid->send($email);
 
-        Alert::showMessage("An e-mail was sent to you, with your account and password!");
+        Message_Alert::showMessage("An e-mail was sent to you, with your account and password!");
 
     } catch (Exception $e) {
         $SQL->rollBack();
